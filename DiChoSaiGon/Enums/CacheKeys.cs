@@ -1,8 +1,8 @@
 ﻿using System;
 namespace DiChoSaiGon.Enums
 {
-    public class CacheKeys
+    public enum CacheKeys
     {
-        Categories,
+        Categories
     }
 }
