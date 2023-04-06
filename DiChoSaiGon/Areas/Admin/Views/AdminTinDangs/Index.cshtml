@@ -26,15 +26,9 @@
             <table class="table table-hover e-commerce-table">
                 <thead>
                     <tr>
-                    <tr>
                         <th>ID</th>
                         <th>Tiêu đề</th>
-                        <th>Ngày tạo</th>
-                        <th>isHOT</th>
-                        <th>isNewFeed</th>
                         <th>Trạng thái</th>
-                        <th>#</th>
-                    </tr>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,13 +38,10 @@
                         {
                             <tr>
                                 <td> @item.PostId</td>
-                                <td>@item.Title</td>
-                                <td>@item.CreatedDate</td>
+                                <td style="max-width:200px">@item.Title</td>
                                 <td>
                                     @if (item.Published == true)
                                     {
-
-
                                         <div class="d-flex align-items-center">
                                             <div class="badge badge-success badge-dot m-r-10"></div>
                                             <div>Public</div>
@@ -64,8 +55,6 @@
                                         </div>
                                     }
 
-
-
                                 </td>
                                 <td>
                                     @if (item.IsHot == true)
@@ -77,16 +66,6 @@
                                             <div>Hot</div>
                                         </div>
                                     }
-                                    else
-                                    {
-                                        <div class="d-flex align-items-center">
-                                            <div class="badge badge-success badge-dot m-r-10"></div>
-                                            <div>-</div>
-                                        </div>
-                                    }
-
-
-
                                 </td>
 
                                 <td>
@@ -99,19 +78,7 @@
                                             <div>IsNewFeed</div>
                                         </div>
                                     }
-                                    else
-                                    {
-                                        <div class="d-flex align-items-center">
-                                            <div class="badge badge-success badge-dot m-r-10"></div>
-                                            <div>-</div>
-                                        </div>
-                                    }
-
-
-
                                 </td>
-
-
                                 <td>
                                     <a class="btn btn-primary btn-tone m-r-5" asp-area="Admin" asp-controller="AdminTinDangs" asp-action="Details" asp-route-id="@item.PostId">Chi tiết</a>
                                     <a class="btn btn-secondary btn-tone m-r-5" asp-area="Admin" asp-controller="AdminTinDangs" asp-action="Edit" asp-route-id="@item.PostId">Sửa</a>

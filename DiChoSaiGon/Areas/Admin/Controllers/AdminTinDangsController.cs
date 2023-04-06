@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DiChoSaiGon.Models;
+using DiChoSaiGon.Helpper;
+using System.IO;
 
 namespace DiChoSaiGon.Areas.Admin.Controllers
 {
@@ -54,10 +56,22 @@ namespace DiChoSaiGon.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PostId,Title,Scontents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountId,Tags,CatId,IsHot,IsNewfeed,MetaKey,MetaDesc,Views")] TinDang tinDang)
+        public async Task<IActionResult> Create([Bind("PostId,Title,Scontents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountId,Tags,CatId,IsHot,IsNewfeed,MetaKey,MetaDesc,Views")] TinDang tinDang, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (ModelState.IsValid)
             {
+                //Xu ly Thumb
+                if (fThumb != null)
+                {
+                    string extension = Path.GetExtension(fThumb.FileName);
+                    string imageName = Utilities.SEOUrl(tinDang.Title) + extension;
+                    tinDang.Thumb = await Utilities.UploadFile(fThumb, @"news", imageName.ToLower());
+                }
+                if (string.IsNullOrEmpty(tinDang.Thumb)) tinDang.Thumb = "default.jpg";
+                tinDang.Alias = Utilities.SEOUrl(tinDang.Title);
+                tinDang.CreatedDate = DateTime.Now;
+
+
                 _context.Add(tinDang);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -86,7 +100,7 @@ namespace DiChoSaiGon.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PostId,Title,Scontents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountId,Tags,CatId,IsHot,IsNewfeed,MetaKey,MetaDesc,Views")] TinDang tinDang)
+        public async Task<IActionResult> Edit(int id, [Bind("PostId,Title,Scontents,Contents,Thumb,Published,Alias,CreatedDate,Author,AccountId,Tags,CatId,IsHot,IsNewfeed,MetaKey,MetaDesc,Views")] TinDang tinDang, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
             if (id != tinDang.PostId)
             {
@@ -97,6 +111,17 @@ namespace DiChoSaiGon.Areas.Admin.Controllers
             {
                 try
                 {
+                    //Xu ly Thumb
+                    if (fThumb != null)
+                    {
+                        string extension = Path.GetExtension(fThumb.FileName);
+                        string imageName = Utilities.SEOUrl(tinDang.Title) + extension;
+                        tinDang.Thumb = await Utilities.UploadFile(fThumb, @"news", imageName.ToLower());
+                    }
+                    if (string.IsNullOrEmpty(tinDang.Thumb)) tinDang.Thumb = "default.jpg";
+                    tinDang.Alias = Utilities.SEOUrl(tinDang.Title);
+                    tinDang.CreatedDate = DateTime.Now;
+
                     _context.Update(tinDang);
                     await _context.SaveChangesAsync();
                 }

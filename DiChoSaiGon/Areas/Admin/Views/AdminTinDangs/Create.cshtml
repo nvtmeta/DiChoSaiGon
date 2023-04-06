@@ -9,98 +9,95 @@
 
 <h4>TinDang</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Scontents" class="control-label"></label>
-                <input asp-for="Scontents" class="form-control" />
-                <span asp-validation-for="Scontents" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Contents" class="control-label"></label>
-                <input asp-for="Contents" class="form-control" />
-                <span asp-validation-for="Contents" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Thumb" class="control-label"></label>
-                <input asp-for="Thumb" class="form-control" />
-                <span asp-validation-for="Thumb" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Published" /> @Html.DisplayNameFor(model => model.Published)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="Alias" class="control-label"></label>
-                <input asp-for="Alias" class="form-control" />
-                <span asp-validation-for="Alias" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreatedDate" class="control-label"></label>
-                <input asp-for="CreatedDate" class="form-control" />
-                <span asp-validation-for="CreatedDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Author" class="control-label"></label>
-                <input asp-for="Author" class="form-control" />
-                <span asp-validation-for="Author" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AccountId" class="control-label"></label>
-                <input asp-for="AccountId" class="form-control" />
-                <span asp-validation-for="AccountId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Tags" class="control-label"></label>
-                <input asp-for="Tags" class="form-control" />
-                <span asp-validation-for="Tags" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CatId" class="control-label"></label>
-                <input asp-for="CatId" class="form-control" />
-                <span asp-validation-for="CatId" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsHot" /> @Html.DisplayNameFor(model => model.IsHot)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsNewfeed" /> @Html.DisplayNameFor(model => model.IsNewfeed)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="MetaKey" class="control-label"></label>
-                <input asp-for="MetaKey" class="form-control" />
-                <span asp-validation-for="MetaKey" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MetaDesc" class="control-label"></label>
-                <input asp-for="MetaDesc" class="form-control" />
-                <span asp-validation-for="MetaDesc" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Views" class="control-label"></label>
-                <input asp-for="Views" class="form-control" />
-                <span asp-validation-for="Views" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+
+
+<div class="page-header d-flex  justify-content-between">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-controller="Home" asp-action="Index" asp-area="Admin" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <a asp-controller="AdminTinDangs" asp-action="Index" asp-area="Admin" class="breadcrumb-item ">Danh sách Tin tuc  </a>
+            <span class="breadcrumb-item active">Tao moi Tin tuc  </span>
+        </nav>
     </div>
+    
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+<form asp-controller="AdminTinDangs" asp-action="Create" method="post" enctype="multipart/form-data">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#product-edit-basic">Basic Info</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#product-edit-option">Option Info</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#product-edit-description">Description</a>
+        </li>
+    </ul>
+    <div class="tab-content m-t-15">
+        <div class="tab-pane fade show active" id="product-edit-basic">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productName">Ten blog</label>
+                        <input type="text" class="form-control" asp-for="Title">
+                    </div>
+                  
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productBrand">Anh dai dien</label>
+                        <input name="fThumb" type="file" class="form-control-file" asp-for="Thumb">
+                        <span asp-validation-for="Thumb" class="text-danger"></span>
+                    </div>
 
+                    <div class="row">
+                        <div class="form-group d-flex align-items-center">
+                            <div class="checkbox">
+                                <input asp-for="Published" type="checkbox" />
+                                <label for="Published">Public</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex align-items-center">
+                            <div class="checkbox">
+                                <input asp-for="IsHot" type="checkbox" />
+                                <label for="IsHot">IsHot</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex align-items-center">
+                            <div class="checkbox">
+                                <input asp-for="IsNewfeed" type="checkbox" />
+                                <label for="IsNewfeed">IsNewfeed</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="product-edit-option">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold">Title</label>
+                        <input type="text" class="form-control" asp-for="Title" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="product-edit-description">
+            <div class="card">
+                <div class="card-body">
+                    <textarea class="summernote" asp-for="Contents"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary">
+        <i class="anticon anticon-save"></i>
+        <span>Save</span>
+    </button>
+
+</form>
