@@ -24,6 +24,8 @@ namespace DiChoSaiGon.Areas.Admin.Controllers
         // GET: Admin/AdminTinDangs
         public async Task<IActionResult> Index()
         {
+
+
             return View(await _context.TinDangs.ToListAsync());
         }
 
@@ -120,7 +122,6 @@ namespace DiChoSaiGon.Areas.Admin.Controllers
                     }
                     if (string.IsNullOrEmpty(tinDang.Thumb)) tinDang.Thumb = "default.jpg";
                     tinDang.Alias = Utilities.SEOUrl(tinDang.Title);
-                    tinDang.CreatedDate = DateTime.Now;
 
                     _context.Update(tinDang);
                     await _context.SaveChangesAsync();
