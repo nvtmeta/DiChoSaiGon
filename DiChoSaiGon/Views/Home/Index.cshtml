@@ -1,5 +1,9 @@
-﻿@{
+﻿@model DiChoSaiGon.ModelView.HomeVM
+@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Product> allProduct = ViewBag.AllProducts;
+
 }
 
 <!-- Begin Slider Area -->
@@ -151,31 +155,23 @@
                         <h3 class="title font-size-40 mb-7 text-success">Giảm giá 20% các loại trong tháng 4</h3>
                     </div>
 
-                    <div class="countdown-wrap with-dark-border">
-                        <div class="countdown item-4" data-countdown="2022/04/01" data-format="short">
-                            <div class="countdown__item me-3">
-                                <span class="countdown__time daysLeft"></span>
-                                <span class="countdown__text ">Ngày</span>
-                            </div>
-                            <div class="countdown__item me-3">
-                                <span class="countdown__time hoursLeft"></span>
-                                <span class="countdown__text ">Giờ</span>
-                            </div>
-                            <div class="countdown__item me-3">
-                                <span class="countdown__time minsLeft"></span>
-                                <span class="countdown__text ">Phút</span>
-                            </div>
-                            <div class="countdown__item">
-                                <span class="countdown__time secsLeft"></span>
-                                <span class="countdown__text">Giây</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="button-wrap pt-10">
+                    <div class="button-wrap pt-10 mb-10">
                         <a class="btn btn-custom-size lg-size btn-primary btn-dark-hover rounded-0" href="shop.html">Mua hàng ngay</a>
                     </div>
                 </div>
             </div>
+
+
+           @* // danh sach san pham*@
+
+            <h1 class="title font-size-40 mb-7 text-success">SẢN PHẨM NỔI BẬT  </h1>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="all-items" role="tabpanel" aria-labelledby="all-items-tab">
+                    @await Html.PartialAsync("_ListProductPartialView", allProduct)
+                </div>
+            </div>
+
+
         </div>
     </div>
 </div>
