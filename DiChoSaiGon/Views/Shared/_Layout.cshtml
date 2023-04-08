@@ -28,6 +28,8 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="~/assets/css/style.css">
 
+    @RenderSection("HeadStyles", required:false);
+
 </head>
 
 <body>
@@ -73,7 +75,6 @@
     <!--Main JS (Common Activation Codes)-->
     <script src="~/assets/js/main.js"></script>
 
-    @await Component.InvokeAsync("Notyf")
     @await RenderSectionAsync("Scripts",required:false)
 
 </body>
