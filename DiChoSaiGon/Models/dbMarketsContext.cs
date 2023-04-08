@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using DiChoSaiGon.ModelViews;
 
 #nullable disable
 
@@ -367,5 +368,9 @@ namespace DiChoSaiGon.Models
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public DbSet<DiChoSaiGon.ModelViews.RegisterViewModel> RegisterViewModel { get; set; }
+
+        public DbSet<DiChoSaiGon.ModelViews.LoginViewModel> LoginViewModel { get; set; }
     }
 }

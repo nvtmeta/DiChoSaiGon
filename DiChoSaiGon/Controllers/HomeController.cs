@@ -40,7 +40,10 @@ namespace DiChoSaiGon.Controllers
 
 
             model.TinTucs = TinTuc;
-            
+
+            model.Products = lsProducts;
+
+
             ViewBag.AllProducts = lsProducts;
             return View(model);
 
