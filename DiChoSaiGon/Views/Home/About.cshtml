@@ -1,0 +1,171 @@
+﻿
+@{
+    ViewData["Title"] = "Ve chung toi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section headStyles {
+
+    <style>
+
+        .container-contact {
+            background: rgb(182, 193, 196);
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 10px auto;
+            padding: 5px 30px;
+            width: 800px;
+            background:#fff;
+            box-shadow: 0 0 5px rgb(255, 254, 254);
+        }
+
+
+        .hr {
+            display: flex;
+            align-items: center;
+        }
+
+        hr {
+            width: 30px;
+            height: 1px;
+            background: black;
+            margin: 0 15px;
+        }
+    
+
+      h2 {
+        font-size: 25px;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      .mission-txt {
+        font-size: 18px;
+        font-weight: 500;
+        font-style: italic;
+        margin-top: 0;
+      }
+
+    
+
+      p {
+        text-align: center;
+      }
+
+        .faculties {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            gap: 34px
+        }
+
+      .unit {
+        margin: 25px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+      }
+
+        .unit img {
+            border-radius: 999px;
+            width: 300px;
+            height: 200px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            margin-bottom:20px
+        }
+
+      .unit p {
+        text-align: left;
+        margin-left:20px
+
+      }
+
+      .unit p:first-of-type {
+        font-weight: bolder;
+        margin-bottom: 5px;
+
+      }
+
+      @*@media screen and (max-width:820px) {
+        .wrapper {
+          width: 80%;
+          padding: 5px 30px;
+        }
+      }*@
+      #mthu{
+        color: rgb(57, 32, 198);
+      }
+    </style>
+
+}
+<div class="container container-contact">
+    <div class="wrapper">
+        <div class="hr">
+            <hr>
+            <h2>Our Mission</h2>
+            <hr>
+        </div>
+
+        <p class="mission-txt">"Mang đến trải nghiệm tốt nhất cho bạn."</p>
+
+    </div>
+
+    <div class="wrapper">
+        <h2>About Us</h2>
+        <div>
+            <img src="logo.png" alt="img">
+      
+            
+                <p>
+                    Owen không chỉ dừng lại ở chất liệu thời trang và phong cách như những thương hiệu khác đang làm. Owen mang tới giải pháp thời trang, đem lại sự tự tin cho nam giới.
+
+                    Lấy ý tưởng kết hợp bản sắc thời trang và tinh thần bản lĩnh của thế hệ người Việt trẻ, Owen là người bạn đồng hành trong những chặng đường chinh phục thử thách của đàn ông Việt.
+                </p>
+
+                <p>Qua đó, Owen đề xuất giá trị và định vị của mình như sau:</p>
+
+                <p id="mthu"> “LỊCH LÃM THỜI TRANG, VỮNG VÀNG BẢN LĨNH - ELEGANT WEAR, STRONG COURAGE” </p>
+
+                <p> Người đàn ông OWEN mang trong mình sự kết nối, được đánh dấu bởi những thành tựu trong cuộc sống, qua đó truyền cảm hứng và lan tỏa tinh thần bản lĩnh, chinh phục đến những người đàn ông khác. </p>
+        
+
+
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h2>Our Team</h2>
+        <div class="faculties">
+            <div class="unit">
+                <img src="/assets/images/Minhthu/Viết Thịnh 1.jpg" alt="Viết Thịnh">
+                <p>Viết Thịnh</p>
+                <p> CEO, FOUDER</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus unde aliquid laborum voluptatum distinctio nobis?'</p>
+
+            </div>
+            <div class="unit">
+                <img src="/assets/images/Minhthu/Ng.jpg" alt="Ngô Thịnh">
+                <p>Ngô Thịnh</p>
+                <p> CCO</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus unde aliquid laborum voluptatum distinctio nobis?'</p>
+
+            </div>
+            <div class="unit">
+                <img src="/assets/images/Minhthu/Minh Thu.jpg" alt="Minh Thu">
+                <p>Minh Thu</p>
+                <p> CMO </p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus unde aliquid laborum voluptatum distinctio nobis?'</p>
+            </div>
+        </div>
+    </div>
+
+</div>
