@@ -184,7 +184,10 @@ namespace DiChoSaiGon.Controllers
 
                     var khachhang = _context.Customers.AsNoTracking().SingleOrDefault(x => x.Email.Trim() == customer.UserName);
 
+                    System.Diagnostics.Debug.WriteLine(khachhang);
+
                     if (khachhang == null) return RedirectToAction("DangkyTaiKhoan");
+
                     string pass = (customer.Password + khachhang.Salt.Trim()).ToMD5();
                     if (khachhang.Password != pass)
                     {
