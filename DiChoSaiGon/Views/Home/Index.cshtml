@@ -76,7 +76,7 @@
                                 <span class="sub-title mb-3">Natural & Organic</span>
                                 <h2 class="title mb-9">Hân hạnh được phục vụ</h2>
                                 <div class="button-wrap">
-                                    <a class="btn btn-custom-size lg-size btn-primary btn-white-hover rounded-0" href="shop.html">Mua ngay</a>
+                                    <a class="btn btn_17" href="shop.html">Mua ngay</a>
                                 </div>
                             </div>
                             <div class="parallax-img-wrap">
@@ -107,39 +107,7 @@
 <div class="shipping-area section-space-top-100">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="shipping-item">
-                    <div class="shipping-img">
-                        <img src="/assets/images/shipping/icon/plane.png" alt="Shipping Icon">
-                    </div>
-                    <div class="shipping-content">
-                        <h5 class="title">Giao hàng miễn phí</h5>
-                        <p class="short-desc mb-0">Với đơn hàng từ 500k</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pt-6 pt-md-0">
-                <div class="shipping-item">
-                    <div class="shipping-img">
-                        <img src="/assets/images/shipping/icon/earphones.png" alt="Shipping Icon">
-                    </div>
-                    <div class="shipping-content">
-                        <h5 class="title">Hỗ trợ 24/7</h5>
-                        <p class="short-desc mb-0">Hotline: <strong>0963102916</strong></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pt-6 pt-lg-0">
-                <div class="shipping-item">
-                    <div class="shipping-img">
-                        <img src="/assets/images/shipping/icon/shield.png" alt="Shipping Icon">
-                    </div>
-                    <div class="shipping-content">
-                        <h5 class="title">Giờ làm việc</h5>
-                        <p class="short-desc mb-0">Từ 7h00 - 19h30 hàng ngày</p>
-                    </div>
-                </div>
-            </div>
+         
         </div>
     </div>
 </div>
@@ -155,16 +123,34 @@
                         <h3 class="title font-size-40 mb-7 text-success">Giảm giá 20% các loại trong tháng 4</h3>
                     </div>
 
-                    <div class="button-wrap pt-10 mb-10">
-                        <a class="btn btn-custom-size lg-size btn-primary btn-dark-hover rounded-0" href="shop.html">Mua hàng ngay</a>
+                    <div class=" button-wrap pt-10 mb-10">
+                        <a class=" btn btn_17 " href="shop.html">Mua hàng ngay</a>
                     </div>
                 </div>
             </div>
 
 
+            <section class="bg-white dark:bg-gray-900">
+                <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+                    <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
+                    <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
+                    <div class="mt-4 md:mt-0">
+                        <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Bring us together</h2>
+                        <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Flowbite helps you connect with friends and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.</p>
+                        <a href="#" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
+                            Get started
+                            <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+
            @* // danh sach san pham*@
 
-            <h1 class="title font-size-40 mb-7 text-success">SẢN PHẨM NỔI BẬT  </h1>
+            <div class="section-title">
+                <h1 class="title font-size-40 mb-7 text-success">SẢN PHẨM NỔI BẬT  </h1>
+            </div>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="all-items" role="tabpanel" aria-labelledby="all-items-tab">
                     @await Html.PartialAsync("_ListProductPartialView", allProduct)

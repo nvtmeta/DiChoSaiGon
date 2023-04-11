@@ -1,0 +1,21 @@
+﻿*{
+    transition:all ease 0.2s;
+    font-family:"Poppin", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif,'Sans Serif Collection'
+}
+
+.btn_17 {
+    border: 1px solid rgb(89, 118, 77);
+    border-radius: 100px;
+    padding: 18px;
+    max-width:100%;
+}
+    .btn_17:hover {
+        background-color: rgb(89, 118, 77);
+        color: #fff;
+        border-color: rgb(89, 118, 77);
+    }
+
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family:"Poppins" !important;
+}

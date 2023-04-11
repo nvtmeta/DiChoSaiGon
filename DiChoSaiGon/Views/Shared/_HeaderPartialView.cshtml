@@ -1,6 +1,27 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
+@section HeadStyles {
+    <style>
+        .btn-search {
+
+        }
+        .btn-icon-search{
+            background-color: #000;
+            background-image: url("https://fullstack.edu.vn/static/media/search.9bd3926522ea0937310c.svg");
+            background-position: 50%;
+            background-repeat: no-repeat;
+            background-size: 18px;
+            border-radius: 50%;
+            height: 32px;
+            opacity: .7;
+            transition: opacity .2s ease-in-out;
+            width: 30px;
+        }
+    </style>
+}
+
 <header class="main-header_area position-relative">
 
     <div class="header-middle py-5">
@@ -8,19 +29,21 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="header-middle-wrap">
-                        <a href="index.html" class="header-logo">
-                            <img src="~/assets/images/logo/dark.png" alt="Header Logo">
+                        <a href="/" class="header-logo">
+                            <img src="~/assets/images/logo/z4256473428756_1838e38243348a0619ff1e49ed2846be.jpg" alt="Header Logo" style="width:100px">
                         </a>
                         <div class="header-search-area d-none d-lg-block">
                             <form action="#" class="header-searchbox">
-                                <input class="input-field" type="text" placeholder="Search Products">
-                                <button class="btn btn-outline-whisper btn-primary-hover" type="submit"><i class="pe-7s-search"></i></button>
+                                <input class="position-relative input-field rounded-pill p-2" type="text" placeholder="Search Products">
+                                <div class="position-absolute fs-5" style=" right:294px; top:64px">
+                                    <i class="pe-7s-search "></i>
+                               </div>
                             </form>
                         </div>
                         <div class="header-right">
                             <ul>
                                 <li class="dropdown d-none d-md-block">
-                                    <button class="btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <button class=" btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class="pe-7s-users"></i>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="settingButton">
@@ -72,25 +95,25 @@
                         <div class="main-menu">
                             <nav class="main-nav">
                                 <ul>
-                                    <li>
-                                        <a asp-action="Index" asp-controller="Home">
+                                    <li >
+                                        <a  class="btn_header" asp-action="Index" asp-controller="Home">
                                             Home
                                         </a>
                                     </li>
                                     <li>
-                                        <a asp-action="Index" asp-controller="Product">
+                                        <a class="btn_header" asp-action="Index" asp-controller="Product">
                                             Sản phẩm
                                         </a>
                                     </li>
                                     <li>
-                                        <a asp-action="Index" asp-controller="Blog">Blog</a>
+                                        <a class="btn_header" asp-action="Index" asp-controller="Blog">Blog</a>
                                     </li>
 
                                     <li>
-                                        <a asp-action="Contact" asp-controller="Home">Liên hệ </a>
+                                        <a class="btn_header" asp-action="Contact" asp-controller="Home">Liên hệ </a>
                                     </li>
                                     <li>
-                                        <a asp-action="About" asp-controller="Home">Về chúng tôi</a>
+                                        <a class="btn_header" asp-action="About" asp-controller="Home">Về chúng tôi</a>
                                     </li>
                                     <li>
                                     </li>
@@ -413,35 +436,35 @@
     </div>
     <div class="offcanvas-minicart_wrapper" id="miniCart">
         @await Component.InvokeAsync("HeaderCart")
-       @* <div class="harmic-offcanvas-body">
-            <div class="minicart-content">
-                <div class="minicart-heading">
-                    <h4 class="mb-0">Shopping Cart</h4>
-                    <a href="#" class="button-close"><i class="pe-7s-close"></i></a>
-                </div>
-                <ul class="minicart-list">
-                    <li class="minicart-product">
-                        <a class="product-item_remove" href="#">
-                            <i class="pe-7s-close"></i>
-                        </a>
-                        <a href="shop.html" class="product-item_img">
-                            <img class="img-full" src="~/assets/images/product/small-size/1-1-112x124.jpg" alt="Product Image">
-                        </a>
-                        <div class="product-item_content">
-                            <a class="product-item_title" href="shop.html">Black Pepper Grains</a>
-                            <span class="product-item_quantity">1 x $80.00</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="minicart-item_total">
-                <span>Subtotal</span>
-                <span class="ammount">$240.00</span>
-            </div>
-            <div class="group-btn_wrap d-grid gap-2">
-                <a href="cart.html" class="btn btn-secondary btn-primary-hover">View Cart</a>
-                <a href="checkout.html" class="btn btn-secondary btn-primary-hover">Checkout</a>
-            </div>
+        @* <div class="harmic-offcanvas-body">
+        <div class="minicart-content">
+        <div class="minicart-heading">
+        <h4 class="mb-0">Shopping Cart</h4>
+        <a href="#" class="button-close"><i class="pe-7s-close"></i></a>
+        </div>
+        <ul class="minicart-list">
+        <li class="minicart-product">
+        <a class="product-item_remove" href="#">
+        <i class="pe-7s-close"></i>
+        </a>
+        <a href="shop.html" class="product-item_img">
+        <img class="img-full" src="~/assets/images/product/small-size/1-1-112x124.jpg" alt="Product Image">
+        </a>
+        <div class="product-item_content">
+        <a class="product-item_title" href="shop.html">Black Pepper Grains</a>
+        <span class="product-item_quantity">1 x $80.00</span>
+        </div>
+        </li>
+        </ul>
+        </div>
+        <div class="minicart-item_total">
+        <span>Subtotal</span>
+        <span class="ammount">$240.00</span>
+        </div>
+        <div class="group-btn_wrap d-grid gap-2">
+        <a href="cart.html" class="btn btn-secondary btn-primary-hover">View Cart</a>
+        <a href="checkout.html" class="btn btn-secondary btn-primary-hover">Checkout</a>
+        </div>
         </div>*@
     </div>
     <div class="global-overlay"></div>
