@@ -49,8 +49,7 @@
                                 </li>
                                 <li class="minicart-wrap me-3 me-lg-0">
                                     <a href="#miniCart" class="minicart-btn toolbar-btn">
-                                        <i class="pe-7s-shopbag"></i>
-                                        <span class="quantity">3</span>
+                                        @await Component.InvokeAsync("NumberCart")
                                     </a>
                                 </li>
                                 <li class="mobile-menu_wrap d-block d-lg-none">
@@ -413,7 +412,8 @@
         </div>
     </div>
     <div class="offcanvas-minicart_wrapper" id="miniCart">
-        <div class="harmic-offcanvas-body">
+        @await Component.InvokeAsync("HeaderCart")
+       @* <div class="harmic-offcanvas-body">
             <div class="minicart-content">
                 <div class="minicart-heading">
                     <h4 class="mb-0">Shopping Cart</h4>
@@ -432,30 +432,6 @@
                             <span class="product-item_quantity">1 x $80.00</span>
                         </div>
                     </li>
-                    <li class="minicart-product">
-                        <a class="product-item_remove" href="#">
-                            <i class="pe-7s-close"></i>
-                        </a>
-                        <a href="shop.html" class="product-item_img">
-                            <img class="img-full" src="~/assets/images/product/small-size/1-2-112x124.jpg" alt="Product Image">
-                        </a>
-                        <div class="product-item_content">
-                            <a class="product-item_title" href="shop.html">Peanut Big Bean</a>
-                            <span class="product-item_quantity">1 x $80.00</span>
-                        </div>
-                    </li>
-                    <li class="minicart-product">
-                        <a class="product-item_remove" href="#">
-                            <i class="pe-7s-close"></i>
-                        </a>
-                        <a href="shop.html" class="product-item_img">
-                            <img class="img-full" src="~/assets/images/product/small-size/1-3-112x124.jpg" alt="Product Image">
-                        </a>
-                        <div class="product-item_content">
-                            <a class="product-item_title" href="shop.html">Dried Lemon Green</a>
-                            <span class="product-item_quantity">1 x $80.00</span>
-                        </div>
-                    </li>
                 </ul>
             </div>
             <div class="minicart-item_total">
@@ -466,7 +442,7 @@
                 <a href="cart.html" class="btn btn-secondary btn-primary-hover">View Cart</a>
                 <a href="checkout.html" class="btn btn-secondary btn-primary-hover">Checkout</a>
             </div>
-        </div>
+        </div>*@
     </div>
     <div class="global-overlay"></div>
 </header>

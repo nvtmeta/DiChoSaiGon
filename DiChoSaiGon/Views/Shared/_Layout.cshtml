@@ -28,7 +28,6 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="~/assets/css/style.css">
 
-    @RenderSection("HeadStyles", required:false);
 
 </head>
 
@@ -40,7 +39,7 @@
         @await Html.PartialAsync("_HeaderPartialView.cshtml")
         <!-- Main Header Area End Here -->
         <!-- Begin Main Content Area  -->
-            @RenderBody()
+        @RenderBody()
         <!-- Main Content Area End Here  -->
         <!-- Begin Footer Area -->
         @await Html.PartialAsync("_FooterPartialView.cshtml")
@@ -76,6 +75,7 @@
     <script src="~/assets/js/main.js"></script>
 
     @await RenderSectionAsync("Scripts",required:false)
+    @RenderSection("HeadStyles", required:false);
 
 </body>
 
