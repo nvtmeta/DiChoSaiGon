@@ -1,0 +1,103 @@
+﻿@model DiChoSaiGon.Models.TinDang
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>TinDang</h4>
+<hr />
+
+
+
+<div class="page-header d-flex  justify-content-between">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-controller="Home" asp-action="Index" asp-area="Admin" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <a asp-controller="AdminTinDangs" asp-action="Index" asp-area="Admin" class="breadcrumb-item ">Danh sách Tin tuc  </a>
+            <span class="breadcrumb-item active">Tao moi Tin tuc  </span>
+        </nav>
+    </div>
+    
+</div>
+
+<form asp-controller="AdminTinDangs" asp-action="Create" method="post" enctype="multipart/form-data">
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#product-edit-basic">Basic Info</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#product-edit-option">Option Info</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#product-edit-description">Description</a>
+        </li>
+    </ul>
+    <div class="tab-content m-t-15">
+        <div class="tab-pane fade show active" id="product-edit-basic">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productName">Ten blog</label>
+                        <input type="text" class="form-control" asp-for="Title">
+                    </div>
+                  
+                    <div class="form-group">
+                        <label class="font-weight-semibold" for="productBrand">Anh dai dien</label>
+                        <input name="fThumb" type="file" class="form-control-file" asp-for="Thumb">
+                        <span asp-validation-for="Thumb" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group d-flex align-items-center">
+                            <div class="checkbox">
+                                <input asp-for="Published" type="checkbox" />
+                                <label for="Published">Public</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex align-items-center">
+                            <div class="checkbox">
+                                <input asp-for="IsHot" type="checkbox" />
+                                <label for="IsHot">IsHot</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group d-flex align-items-center">
+                            <div class="checkbox">
+                                <input asp-for="IsNewfeed" type="checkbox" />
+                                <label for="IsNewfeed">IsNewfeed</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="product-edit-option">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label class="font-weight-semibold">Title</label>
+                        <input type="text" class="form-control" asp-for="Title" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="product-edit-description">
+            <div class="card">
+                <div class="card-body">
+                    <textarea class="summernote" asp-for="Contents"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary">
+        <i class="anticon anticon-save"></i>
+        <span>Save</span>
+    </button>
+
+</form>

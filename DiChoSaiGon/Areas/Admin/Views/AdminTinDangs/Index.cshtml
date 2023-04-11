@@ -1,0 +1,95 @@
+﻿@using PagedList.Core.Mvc
+@model IEnumerable<DiChoSaiGon.Models.TinDang>
+@{
+    ViewData["Title"] = "Quan ly tin tuc";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Quan ly tin tuc</h1>
+
+
+<div class="page-header d-flex  justify-content-between">
+    <div class="header-sub-title">
+        <nav class="breadcrumb breadcrumb-dash">
+            <a asp-controller="Home" asp-action="Index" asp-area="Admin" class="breadcrumb-item"><i class="anticon anticon-home m-r-5"></i>Home</a>
+            <span class="breadcrumb-item active">Danh sách Tin tuc  </span>
+        </nav>
+    </div>
+    <div class="text-right">
+        <a class="btn btn-primary" asp-area="Admin" asp-controller="AdminTinDangs" asp-action="Create"><i class="anticon anticon-plus-circle m-r-5"></i><span>Add new</span></a>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-hover e-commerce-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tiêu đề</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td> @item.PostId</td>
+                                <td style="max-width:200px">@item.Title</td>
+                                <td>
+                                    @if (item.Published == true)
+                                    {
+                                        <div class="d-flex align-items-center">
+                                            <div class="badge badge-success badge-dot m-r-10"></div>
+                                            <div>Public</div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="d-flex align-items-center">
+                                            <div class="badge badge-success badge-dot m-r-10"></div>
+                                            <div>Non-Public</div>
+                                        </div>
+                                    }
+
+                                </td>
+                                <td>
+                                    @if (item.IsHot == true)
+                                    {
+
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="badge badge-success badge-dot m-r-10"></div>
+                                            <div>Hot</div>
+                                        </div>
+                                    }
+                                </td>
+
+                                <td>
+                                    @if (item.IsNewfeed == true)
+                                    {
+
+
+                                        <div class="d-flex align-items-center">
+                                            <div class="badge badge-success badge-dot m-r-10"></div>
+                                            <div>IsNewFeed</div>
+                                        </div>
+                                    }
+                                </td>
+                                <td>
+                                    <a class="btn btn-primary btn-tone m-r-5" asp-area="Admin" asp-controller="AdminTinDangs" asp-action="Details" asp-route-id="@item.PostId">Chi tiết</a>
+                                    <a class="btn btn-secondary btn-tone m-r-5" asp-area="Admin" asp-controller="AdminTinDangs" asp-action="Edit" asp-route-id="@item.PostId">Sửa</a>
+                                    <a class="btn btn-success btn-tone m-r-5" asp-area="Admin" asp-controller="AdminTinDangs" asp-action="Delete" asp-route-id="@item.PostId">Xóa</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
