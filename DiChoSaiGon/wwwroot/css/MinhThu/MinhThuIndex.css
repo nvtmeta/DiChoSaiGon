@@ -29,12 +29,12 @@
 @media only screen and (max-width: 760px) {
 
     .card-blog {
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        padding: 14px 20px;
-        align-items: center;
-        width: 300px;
+        padding: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 14px 20px !important;
+        align-items: center !important;
+        width: 300px !important;
     }
 
     .img-blog {

@@ -4,17 +4,8 @@
 
 @section HeadStyles {
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0px;
-            padding: 0px;
-        }
-
-        body {
-            width: 1225px;
-            box-sizing: border-box;
-        }
-
+      
+       
         .img-blog {
             background: #ebebeb;
             border-radius: 15px;
@@ -135,7 +126,7 @@
                 string url = $"/tin-tuc/{item.Alias}-{item.PostId}.html";
                 <a href="@url">
                     <div class="card card-blog">
-                        <div>   <img src="~/images/news/@item.Thumb" alt="@item.Title" class="img-blog"></div>
+                        <div> <img src="~/images/news/@item.Thumb" alt="@item.Title" class="img-blog"></div>
                         <div>
                             <h4 class="title-blog">@item.Title</h4>
                             <p class="content-blog">@item.Contents</p>
