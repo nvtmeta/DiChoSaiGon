@@ -4,7 +4,15 @@
 
 @section HeadStyles {
     <style>
-
+        *{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            width: 1225px;
+            box-sizing: border-box;
+        }
         .img-blog {
             background: #ebebeb;
             border-radius: 15px;
@@ -16,28 +24,22 @@
             object-fit: cover;
             overflow: hidden;
             text-align: center;
-            width: 550px;
-            padding-left:6px;
-           
+            width: 3700px;
+            padding-left: 6px;
         }
         /* Create two unequal columns that floats next to each other */
         /* Left column */
         .leftcolumn {
-            width: 60%;
-            margin-left:10px;
+            margin-left: 10px;
         }
 
         /* Right column */
         .rightcolumn {
-            width: 40%;
+            float: right;
+            width: 25%;
+            padding-left: 20px;
         }
 
-        /* Fake image */
-        .fakeimg {
-            background-color: #aaa;
-            width: 100%;
-            padding: 20px;
-        }
 
         /* Add a card effect for articles */
         .card {
@@ -48,7 +50,10 @@
             flex-direction: row-reverse;
             margin: 14px 20px;
             align-items: center;
+            width: 900px;
+
         }
+
         .title-blog {
             color: #292929;
             font-size: 24px;
@@ -57,23 +62,26 @@
             margin-bottom: 0;
             margin-top: 8px;
         }
+
         p {
             color: #505050;
             font-size: 18px;
             line-height: 1.6;
             margin-top: 4px;
         }
+
         h2 {
             color: #242424;
             font-size: 2rem;
             font-weight: 900;
-            padding:16px;
-
+            padding: 16px;
         }
+
 
         .blog-container {
             display: flex;
             flex-direction: row;
+            flex-basis: 50%;
         }
 
         .content-blog {
@@ -82,48 +90,63 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-
+        .about{
+            width: 400px;
+            height: 300px;
+            margin-left: 300px;
+        }
+        div.rightcolumn {
+            overflow:hidden
+        }
     </style>
 }
 
 
-
-
-    <div class="header">
-        <h2>Bài viết nổi bật</h2>
+<div class="breadcrumb-area breadcrumb-height mt-n20" data-bg-image="~/assets/images/breadcrumb/bg/1-1-1920x373.jpg">
+    <div class="container h-100 mt-n10">
+        <div class="row h-100 mt-n10">
+            <div class="col-lg-12 ">
+                <div class="breadcrumb-item">
+                    <h2 class="breadcrumb-heading"> Blog </h2>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home <i class="pe-7s-angle-right"></i></a>
+                        </li>
+                        <li> Blog </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+<div class="header mt-n10">
+    <h2>Bài viết nổi bật</h2>
+</div>
 
-    <div class="row blog-container">
-        <div class="leftcolumn">
-            @if (Model != null && Model.Count() > 0 )
+<div class=" blog-container">
+    <div class="leftcolumn">
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
             {
-                foreach (var item in Model)
-                {
-                    string url = $"/tin-tuc/{item.Alias}-{item.PostId}.html";
-                    <div class="card">
-                        <img src="~/images/news/@item.Thumb" alt="@item.Title" class="img-blog">
+                string url = $"/tin-tuc/{item.Alias}-{item.PostId}.html";
+                <a href="@url">
+                    <div class="card card-blog">
+                        <div>   <img src="~/images/news/@item.Thumb" alt="@item.Title" class="img-blog"></div>
                         <div>
                             <h4 class="title-blog">@item.Title</h4>
                             <p class="content-blog">@item.Contents</p>
                         </div>
                     </div>
-                }
+                </a>
             }
-        </div>
+        }
+    </div>
     <div class="rightcolumn">
-        <div class="card">
-            <h2>About Me</h2>
-            <div class="fakeimg" style="height:100px;">Image</div>
-            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-        </div>
-        <div class="card">
-            <h3>Popular Post</h3>
-            <img src="cũng hay" alt="" width="180px" height="100px">
-            <p> Xu hướng mới</p>
-            <img src="ok" alt="" width="180px" height="100px">
-            <p> Những thay đổi của ngành thời trang trong những năm qua</p>
-            <img src="áo" alt="" width="180px" height="100px">
-            <p> Bạn nên biết điều này</p>
+        <div class="about">
+            <h2>About Us</h2>
+            <img src="~/assets/images/Minhthu/logo.jpg">
+            <p>Kinh doanh quần áo thời trang nam là xu hướng được nhiều shop lựa chọn hiện nay bởi nhu cầu thị trường cao, cho doanh số lớn. Tuy nhiên, không phải ai cũng thực sự thành công khi dấn thân vào con đường này</p>
         </div>
     </div>
-    </div>
+</div>

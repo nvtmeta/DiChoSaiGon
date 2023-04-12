@@ -21,7 +21,6 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="wwwroot\Adminassets\images\pages\" />
-    <Folder Include="wwwroot\assets\images\Minhthu\" />
   </ItemGroup>
 
 </Project>
