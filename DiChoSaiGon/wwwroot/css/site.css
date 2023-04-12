@@ -54,10 +54,14 @@ button.accept-policy {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    font-family: "Poppins", sans-serif !important;
+    min-height: 100%;
 }
 
+h1 {
+    font-family: "Poppins", sans-serif;
+}
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;

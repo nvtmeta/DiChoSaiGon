@@ -5,8 +5,8 @@
 
     @if (Model != null && Model.Count() > 0)
     {
-        <li class="minicart-wrap me-3 me-lg-0">
-            <a href="#miniCart" class="minicart-btn toolbar-btn">
+        <li class="minicart-wrap me-3 me-lg-0 ">
+        <a href="#miniCart" class="minicart-btn toolbar-btn" style="font-size:20px; color:#fff">
                 <i class="pe-7s-shopbag"></i>
                 <span class="quantity">@Model.Count()</span>
             </a>
@@ -14,8 +14,8 @@
     }
     else
     {
-        <li class="minicart-wrap me-3 me-lg-0">
-            <a href="#miniCart" class="toolbar-btn">
+        <li class="list-none ml-4 minicart-wrap me-3 me-lg-0">
+            <a href="#miniCart" class="toolbar-btn text-[20px] text-white">
                 <i class="pe-7s-shopbag"></i>
                 <span class="quantity">0</span>
             </a>

@@ -1,17 +1,19 @@
 /*----------------------------------------*/
 /*  04. Shipping
 /*----------------------------------------*/
-.shipping{
-    &-item{
+.shipping {
+    &-item {
         border: 2px solid $primary;
         display: flex;
         align-items: center;
         padding: 30px;
         position: relative;
-        @include media-breakpoint-only(lg){
+
+        @include media-breakpoint-only(lg) {
             padding: 25px;
         }
-        &:before{
+
+        &:before {
             background-color: $white;
             width: 10px;
             height: 70px;
@@ -22,10 +24,12 @@
             left: -5px;
         }
     }
-    &-content{
+
+    &-content {
         padding-left: 20px;
-        .short-desc{
-            font-family: 'rubikregular';
+
+        .short-desc {
+            font-family: "Poppins", sans-serif;
             font-size: 14px;
         }
     }
