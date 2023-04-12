@@ -3,6 +3,251 @@
     ViewData["Title"] = "Thong tin lien he";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+@section HeadStyles {
+
+    <style>
+
+
+
+   button, input {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+  }
+        .main-content{
+
+        }
+        .background {
+            background-image: url("https://www.google.com/maps/d/thumbnail?mid=1QOAIkqCZC2I_fF10TTElID0kb3c&hl=en_US");
+            font-size: 12px;
+            display: flex;
+            min-height: 100vh;
+            margin-top:-80px;
+        }
+
+  .container {
+    flex: 0 1 700px;
+    margin: auto;
+    padding: 10px;
+  }
+
+  .screen {
+    position: relative;
+    background: #3e3e3e;
+    border-radius: 15px;
+  }
+
+  .screen:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    z-index: -1;
+  }
+
+  .screen-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #4d4d4f;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+
+  .screen-header-left {
+    margin-right: auto;
+  }
+
+  .screen-header-button {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 3px;
+    border-radius: 8px;
+    background: white;
+  }
+
+  .screen-header-button.close {
+    background: #ed1c6f;
+  }
+
+  .screen-header-button.maximize {
+    background: #e8e925;
+  }
+
+  .screen-header-button.minimize {
+    background: #74c54f;
+  }
+
+  .screen-header-right {
+    display: flex;
+  }
+
+  .screen-header-ellipsis {
+    width: 3px;
+    height: 3px;
+    margin-left: 2px;
+    border-radius: 8px;
+    background: #999;
+  }
+
+  .screen-body {
+    display: flex;
+  }
+
+  .screen-body-item {
+    flex: 1;
+    padding: 50px;
+  }
+
+  .screen-body-item.left {
+    display: flex;
+    flex-direction: column;
+  }
+
+        .app-title {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            color: #59764d;
+            font-size: 26px;
+        }
+
+            .app-title:after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                width: 25px;
+                height: 4px;
+                background: #59764d;
+            }
+
+        .app-contact {
+            margin-top: auto;
+            font-size: 8px;
+            color: #888;
+            padding: 20px;
+            margin: 20px
+        }
+
+  .app-form-group {
+    margin-bottom: 15px;
+  }
+
+  .app-form-group.message {
+    margin-top: 40px;
+  }
+
+  .app-form-group.buttons {
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  .app-form-control {
+    width: 100%;
+    padding: 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #ddd;
+    font-size: 14px;
+    text-transform: uppercase;
+    outline: none;
+    transition: border-color .2s;
+  }
+
+  .app-form-control::placeholder {
+    color: #666;
+  }
+
+  .app-form-control:focus {
+    border-bottom-color: #ddd;
+  }
+
+        .app-form-button {
+            background: none;
+            border: none;
+            color: #59764d;
+            font-size: 14px;
+            cursor: pointer;
+            outline: none;
+        }
+
+  .app-form-button:hover {
+    color: #b9134f;
+  }
+
+  .credits {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: #ffa4bd;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  .credits-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .dribbble {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+  }
+
+       
+
+  @*@media screen and (max-width: 520px) {
+    .screen-body {
+      flex-direction: column;
+    }
+
+    .screen-body-item.left {
+      margin-bottom: 30px;
+    }
+
+    .app-title {
+      flex-direction: row;
+    }
+
+    .app-title span {
+      margin-right: 12px;
+    }
+
+    .app-title:after {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .screen-body {
+      padding: 40px;
+    }
+
+    .screen-body-item {
+      padding: 0;
+    }
+  }*@
+    </style>
+
+}
+
+
 <!-- Begin Main Content Area -->
 <main class="main-content">
     <div class="breadcrumb-area breadcrumb-height" data-bg-image="~/assets/images/breadcrumb/bg/1-1-1920x373.jpg">
@@ -23,72 +268,68 @@
         </div>
     </div>
 
-    <!-- Begin Shipping Area -->
-    <div class="shipping-area section-space-y-axis-100">
+
+
+    <div class="background">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="shipping-item">
-                        <div class="shipping-img">
-                            <img src="~/assets/images/shipping/icon/plane.png" alt="Shipping Icon">
+            <div class="screen">
+                <div class="screen-header">
+                    <div class="screen-header-left">
+                        <div class="screen-header-button close"></div>
+                        <div class="screen-header-button maximize"></div>
+                        <div class="screen-header-button minimize"></div>
+                    </div>
+                    <div class="screen-header-right">
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                        <div class="screen-header-ellipsis"></div>
+                    </div>
+                </div>
+                <div class="screen-body">
+                    <div class="screen-body-item left">
+                        <div class="app-title">
+                            <span>CONTACT</span>
+                            <span>US</span>
                         </div>
-                        <div class="shipping-content">
-                            <h5 class="title">Free Shipping</h5>
-                            <p class="short-desc mb-0">Free Home Delivery Offer</p>
+
+                    </div>
+                    <div class="screen-body-item">
+                        <div class="app-form">
+                            <div class="app-form-group">
+                                <input class="app-form-control" placeholder="NAME">
+                            </div>
+                            <div class="app-form-group">
+                                <input class="app-form-control" placeholder="EMAIL">
+                            </div>
+                            <div class="app-form-group">
+                                <input class="app-form-control" placeholder="CONTACT NO">
+                            </div>
+                            <div class="app-form-group message">
+                                <input class="app-form-control" placeholder="MESSAGE">
+                            </div>
+                            <div class="app-form-group buttons">
+                                <button class="app-form-button">CANCEL</button>
+                                <button class="app-form-button">SEND</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 pt-6 pt-md-0">
-                    <div class="shipping-item">
-                        <div class="shipping-img">
-                            <img src="~/assets/images/shipping/icon/earphones.png" alt="Shipping Icon">
-                        </div>
-                        <div class="shipping-content">
-                            <h5 class="title">Online Support</h5>
-                            <p class="short-desc mb-0">24/7 Online Support Provide</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 pt-6 pt-lg-0">
-                    <div class="shipping-item">
-                        <div class="shipping-img">
-                            <img src="~/assets/images/shipping/icon/shield.png" alt="Shipping Icon">
-                        </div>
-                        <div class="shipping-content">
-                            <h5 class="title">Secure Payment</h5>
-                            <p class="short-desc mb-0">Fully Secure Payment System</p>
-                        </div>
-                    </div>
+                <div class="app-contact">
+                    <div class="app-contact-1">CONTACT INFO : 0815423202</div>
+                    <div class="app-contact-2">EMAIL: tihu2210@gmail.com</div>
+                    <div class="app-contact-3">ADDRESS: 193 Vĩnh Hưng, Hoàng Mai, Hà Nội</div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Shipping Area End Here -->
-
-    <div class="contact-with-map">
-        <div class="contact-map">
-            <iframe class="contact-map-size" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1613802584124!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="contact-form-area section-space-bottom-100">
-            <div class="container">
-                <div class="contact-form-wrap">
-                    <form id="contact-form" class="contact-form" action="https://whizthemes.com/mail-php/mamunur/harmic/harmic.php">
-                        <h4 class="contact-form-title pb-2 mb-7">Send Us a Massage</h4>
-                        <div class="form-field">
-                            <input type="text" name="con_name" placeholder="Name*" class="input-field">
-                        </div>
-                        <div class="form-field mt-6">
-                            <input type="text" name="con_email" placeholder="Email*" class="input-field">
-                        </div>
-                        <div class="form-field mt-6">
-                            <textarea name="con_message" placeholder="Message" class="textarea-field"></textarea>
-                        </div>
-                        <div class="button-wrap mt-8">
-                            <button type="submit" value="submit" class="btn btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0" name="submit">Post Message</button>
-                        </div>
-                        <p class="form-messege mt-3 mb-0"></p>
-                    </form>
-                </div>
+            <div class="credits">
+                <svg class="dribbble" viewBox="0 0 200 200">
+                    <g stroke="#ffffff" fill="none">
+                        <circle cx="100" cy="100" r="90" stroke-width="20"></circle>
+                        <path d="M62.737004,13.7923523 C105.08055,51.0454853 135.018754,126.906957 141.768278,182.963345" stroke-width="20"></path>
+                        <path d="M10.3787186,87.7261455 C41.7092324,90.9577894 125.850356,86.5317271 163.474536,38.7920951" stroke-width="20"></path>
+                        <path d="M41.3611549,163.928627 C62.9207607,117.659048 137.020642,86.7137169 189.041451,107.858103" stroke-width="20"></path>
+                    </g>
+                </svg>
+                </a>
             </div>
         </div>
     </div>
