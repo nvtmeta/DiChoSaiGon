@@ -3,97 +3,191 @@
     ViewData["Title"] = "Ve chung toi";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<!-- Begin Main Content Area -->
-<main class="main-content">
-    <div class="breadcrumb-area breadcrumb-height" data-bg-image="~/assets/images/breadcrumb/bg/1-1-1920x373.jpg">
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col-lg-12">
-                    <div class="breadcrumb-item">
-                        <h2 class="breadcrumb-heading">About Us</h2>
-                        <ul>
-                            <li>
-                                <a href="index.html">Home <i class="pe-7s-angle-right"></i></a>
-                            </li>
-                            <li>About Us</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="about-banner different-bg-position section-space-y-axis-100" data-bg-image="~/assets/images/about/banner/1-1-1920x598.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-5">
-                    <div class="parallax-img-wrap">
-                        <div class="papaya">
-                            <div class="scene fill">
-                                <div class="expand-width" data-depth="0.2">
-                                    <img src="~/assets/images/banner/inner-img/2-1-503x430.png" alt="Banner Images">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-7 align-self-center">
-                    <div class="about-banner-content">
-                        <div class="section-title">
-                            <span class="sub-title">Welcome To Harmic</span>
-                            <h2 class="title font-size-60 mb-6">Best Organic Shop</h2>
-                            <p class="short-desc mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmo tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimd veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip commo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-                            <div class="button-wrap pt-8">
-                                <a class="btn btn-custom-size lg-size btn-primary btn-dark-hover rounded-0" href="shop.html">Shop Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
+@section headStyles {
+
+    <style>
+
+        .container-contact {
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin: 10px auto;
+            padding: 5px 30px;
+            width: 800px;
+            background:#fff;
+            box-shadow: 0 0 5px rgb(255, 254, 254);
+            
+        }
+
+
+        .hr {
+            display: flex;
+            align-items: center;
+        }
+
+        hr {
+            width: 30px;
+            height: 1px;
+            background: black;
+            margin: 0 15px;
+        }
     
-   
-   
-</main>
-<!-- Main Content Area End Here -->
-<!-- Begin Shipping Area -->
-<div class="shipping-area section-space-y-axis-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="shipping-item">
-                    <div class="shipping-img">
-                        <img src="~/assets/images/shipping/icon/plane.png" alt="Shipping Icon">
-                    </div>
-                    <div class="shipping-content">
-                        <h5 class="title">Free Shipping</h5>
-                        <p class="short-desc mb-0">Free Home Delivery Offer</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pt-6 pt-md-0">
-                <div class="shipping-item">
-                    <div class="shipping-img">
-                        <img src="~/assets/images/shipping/icon/earphones.png" alt="Shipping Icon">
-                    </div>
-                    <div class="shipping-content">
-                        <h5 class="title">Online Support</h5>
-                        <p class="short-desc mb-0">24/7 Online Support Provide</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pt-6 pt-lg-0">
-                <div class="shipping-item">
-                    <div class="shipping-img">
-                        <img src="~/assets/images/shipping/icon/shield.png" alt="Shipping Icon">
-                    </div>
-                    <div class="shipping-content">
-                        <h5 class="title">Secure Payment</h5>
-                        <p class="short-desc mb-0">Fully Secure Payment System</p>
-                    </div>
+
+      h2 {
+        font-size: 25px;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+      .mission-txt {
+        font-size: 18px;
+        font-weight: 500;
+        font-style: italic;
+        margin-top: 0;
+      }
+
+    
+
+      p {
+        text-align: center;
+      }
+
+        .faculties {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            gap: 34px
+        }
+
+      .unit {
+        margin: 25px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+      }
+
+        .unit img {
+            border-radius: 999px;
+            width: 300px;
+            height: 200px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+            margin-bottom:20px;
+            margin-right:-24px;
+        }
+
+      .unit p {
+        text-align: left;
+        margin-left:20px
+
+      }
+
+      .unit p:first-of-type {
+        font-weight: bolder;
+        margin-bottom: 5px;
+
+      }
+
+      @*@media screen and (max-width:820px) {
+        .wrapper {
+          width: 80%;
+          padding: 5px 30px;
+        }
+      }*@
+        #mthu {
+            color: #59764d;
+        }
+     
+    </style>
+
+}
+
+<div class="breadcrumb-area breadcrumb-height" data-bg-image="~/assets/images/breadcrumb/bg/1-1-1920x373.jpg">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-lg-12">
+                <div class="breadcrumb-item">
+                    <h2 class="breadcrumb-heading"> About Us </h2>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home <i class="pe-7s-angle-right"></i></a>
+                        </li>
+                        <li>About us</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Shipping Area End Here -->
+
+<div class="container container-contact">
+    <div class="wrapper">
+        <div class="hr">
+            <hr>
+            <h2>Our Mission</h2>
+            <hr>
+        </div>
+
+        <p class="mission-txt">"Mang đến trải nghiệm tốt nhất cho bạn."</p>
+
+    </div>
+
+    <div class="wrapper">
+        <h2>About Us</h2>
+        <div>
+
+            <img src="~/assets/MinhThu/logo.jpg" alt="logo">
+      
+            
+            <p>
+                ThinhSeRo không chỉ dừng lại ở chất liệu thời trang và phong cách như những thương hiệu khác đang làm. ThinhSeRo mang tới giải pháp thời trang, đem lại sự tự tin cho nam giới.
+
+                Lấy ý tưởng kết hợp bản sắc thời trang và tinh thần bản lĩnh của thế hệ người Việt trẻ, ThinhSeRo là người bạn đồng hành trong những chặng đường chinh phục thử thách của đàn ông Việt.
+            </p>
+
+                <p>Qua đó, ThinhSeRo  đề xuất giá trị và định vị của mình như sau:</p>
+
+                <p id="mthu"> “LỊCH LÃM THỜI TRANG, VỮNG VÀNG BẢN LĨNH - ELEGANT WEAR, STRONG COURAGE” </p>
+
+                <p> Người đàn ông ThinhSeRo mang trong mình sự kết nối, được đánh dấu bởi những thành tựu trong cuộc sống, qua đó truyền cảm hứng và lan tỏa tinh thần bản lĩnh, chinh phục đến những người đàn ông khác. </p>
+        
+
+
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <h2>Our Team</h2>
+        <div class="faculties">
+            <div class="unit">
+                <img src="~/assets/MinhThu/ViếtThịnh1.jpg" alt="Viết Thịnh">
+                <p>Viết Thịnh</p>
+                <p> CEO, FOUNDER</p>
+                <p>Tổng giám đốc điều hành, Người sáng lập</p>
+
+            </div>
+            <div class="unit">
+                <img src="~/assets/MinhThu/Ng.jpg" alt="Ngô Thịnh">
+                <p>Ngô Thịnh</p>
+                <p> CCO</p>
+                <p>Giám đốc thương mại</p>
+
+            </div>
+            <div class="unit">
+                <img src="~/assets/MinhThu/Minh Thu.jpg" alt="Minh Thu">
+                <p>Minh Thu</p>
+                <p> CMO </p>
+                <p>Giám đốc marketing</p>
+            </div>
+        </div>
+    </div>
+
+</div>
