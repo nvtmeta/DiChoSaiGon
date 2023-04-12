@@ -1,7 +1,13 @@
-﻿
-@*
+﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
+@section HeadStyles {
+    <style>
+
+    </style>
+}
+
 
 @model List<Product>
 @if (Model != null && Model.Count() > 0)
@@ -16,20 +22,20 @@
                         <a href="@url">
                             <img width="200" height="200" class="img-full" src="~/images/products/@item.Thumb" alt="@item.Title">
                         </a>
-                        <div class="product-add-action">
-                            <ul>
-                                <li>
-                                    <a href="cart.html">
-                                        <i class="pe-7s-cart"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+
                     </div>
                     <div class="product-content">
                         <a class="product-name" href="@url">@item.ProductName</a>
                         <div class="price-box pb-1">
                             <span class="new-price">@item.Price.Value.ToString("#,##0") VNĐ</span>
+                        </div>
+
+
+                        <div class="  button-wrap pt-10 mb-10">
+                            <a class="btn_product" href="@url">
+                                <i class="pe-7s-cart"></i>
+                                Xem chi tiết
+                            </a>
                         </div>
                     </div>
                 </div>

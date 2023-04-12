@@ -5,115 +5,119 @@
     List<Product> allProduct = ViewBag.AllProducts;
 
 }
+@section HeadStyles {
+    <style>
+        .banner_17 {
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+        }
+        .banner_head-title{
+            
+            margin-left:60px;
+            font-size:40px;
+            font-weight:700;
+            color: rgb(89, 118, 77);
+
+
+        }
+        .banner_paragraph{
+            padding-top: 20px;
+            margin-left: 68px;
+            font-size: 20px;
+            font-weight: 400;
+            color: #000;
+        }
+
+        .banner_btn {
+            margin-top: 55px;
+            margin-left: 68px;
+
+        }
+        .homepage_cta{
+            background-color: #EFEFFF
+        }
+
+
+        .img-cta-content{
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            border: 7px solid #000
+        }
+        
+    </style>
+}
+
 
 <!-- Begin Slider Area -->
-<div class="slider-area">
 
-    <!-- Main Slider -->
-    <div class="swiper-container main-slider swiper-arrow with-bg_white">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide animation-style-01">
-                <div class="slide-inner bg-height" data-bg-image="/assets/images/slider/bg/1-1.jpg">
-                    <div class="parallax-img-wrap">
-                        <div class="chilly">
-                            <div class="scene fill">
-                                <div class="expand-width" data-depth="0.2">
-                                    <img src="/assets/images/slider/inner-img/ot.png" alt="Inner Image">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="avocado">
-                            <div class="scene fill">
-                                <div class="expand-width" data-depth="0.5">
-                                    <img src="/assets/images/slider/inner-img/qua-bo.png" alt="Inner Image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="parallax-with-content">
-                            <div class="slide-content">
-                                <span class="sub-title mb-3">Natural & Organic</span>
-                                <h2 class="title mb-9">Hân hạnh được phục vụ</h2>
-                                <div class="button-wrap">
-                                    <a class="btn btn-custom-size lg-size btn-primary btn-white-hover rounded-0" href="shop.html">Mua ngay</a>
-                                </div>
-                            </div>
-                            <div class="parallax-img-wrap">
-                                <div class="tomatoes">
-                                    <div class="scene fill">
-                                        <div class="expand-width" data-depth="0.5">
-                                            <img src="/assets/images/slider/inner-img/otchuong.png" alt="Inner Image">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide animation-style-01">
-                <div class="slide-inner bg-height" data-bg-image="/assets/images/slider/bg/1-1.jpg">
-                    <div class="parallax-img-wrap">
-                        <div class="chilly">
-                            <div class="scene fill">
-                                <div class="expand-width" data-depth="0.2">
-                                    <img src="/assets/images/slider/inner-img/ot.png" alt="Inner Image">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="avocado">
-                            <div class="scene fill">
-                                <div class="expand-width" data-depth="0.5">
-                                    <img src="/assets/images/slider/inner-img/qua-bo.png" alt="Inner Image">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="parallax-with-content">
-                            <div class="slide-content">
-                                <span class="sub-title mb-3">Natural & Organic</span>
-                                <h2 class="title mb-9">Hân hạnh được phục vụ</h2>
-                                <div class="button-wrap">
-                                    <a class="btn btn_17" href="shop.html">Mua ngay</a>
-                                </div>
-                            </div>
-                            <div class="parallax-img-wrap">
-                                <div class="tomatoes">
-                                    <div class="scene fill">
-                                        <div class="expand-width" data-depth="0.5">
-                                            <img src="/assets/images/slider/inner-img/otchuongdo.png" alt="Inner Image">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<div id="default-carousel" class="z-1 relative h-96 w-[95%] m-auto  mt-6" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="z-1 relative h-96 overflow-hidden md:mt-0 mt-[100px]  rounded-[30px] md:h-96">
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out rounded-pill" data-carousel-item>
+            <img src="https://elements-cover-images-0.imgix.net/9f22883c-b333-4215-a00a-c54e23d159c0?auto=compress&crop=edges&fit=crop&fm=jpeg&h=630&w=1200&s=5d7e512123a12489f931fba85489fb69" class="absolute block w-full rounded-lg -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out rounded-[70px] " data-carousel-item>
+            <img src="https://img.freepik.com/free-psd/fall-autumn-template-design-banner_23-2149062505.jpg?w=1380&t=st=1681277229~exp=1681277829~hmac=4497f14804c43400a4769259bbf993cef675d9511a6460ce9603246c01cd9b87" class=" rounded-[70px] absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="banner_17 absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+               <div>
+                    <h1 class="banner_head-title md:pt-[86px] pt-[30px]">Welcome you!</h1>
+                    <p class="banner_paragraph">
+                        Looking for the best men's clothing? <br />
+                        Shop top brands and best rated products at Thinhsero right now !
+                    </p>
+               </div>
+                <button class="banner_btn btn_17" >
+                    <a href="/shop.html">Mua ngay</a>
+                </button>
             </div>
         </div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination with-bg d-md-none"></div>
-
-        <!-- Add Arrows -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="~/images/products/ao-so-mi-dai-tay-thinhsero-01.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="~/images/products/ao-so-mi-dai-tay-thinhsero-01.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+        </div>
     </div>
-
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg aria-hidden="true" class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
 </div>
+
 <!-- Slider Area End Here -->
 <!-- Begin Shipping Area -->
 <div class="shipping-area section-space-top-100">
     <div class="container">
         <div class="row">
-         
         </div>
     </div>
 </div>
 
 
-<div class="banner-area banner-style-2 section-space-y-axis-100" data-bg-image="/assets/images/product/pngtree.jpg">
+<div class=" banner-area banner-style-2 section-space-y-axis-100" data-bg-image="/assets/images/product/pngtree.jpg">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -129,11 +133,10 @@
                 </div>
             </div>
 
-
+           
             <section class="bg-white dark:bg-gray-900">
                 <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-                    <img class="w-full dark:hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
-                    <img class="w-full hidden dark:block" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
+                    <iframe class=" img-cta-content w-full rounded-3xl " height="432" src="https://www.youtube.com/embed/qlJiMiOnXkg" title="Kopaka Men&#39;s Wear Advertising" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <div class="mt-4 md:mt-0">
                         <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Bring us together</h2>
                         <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">Flowbite helps you connect with friends and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.</p>
@@ -146,7 +149,7 @@
             </section>
 
 
-           @* // danh sach san pham*@
+            @* // danh sach san pham*@
 
             <div class="section-title">
                 <h1 class="title font-size-40 mb-7 text-success">SẢN PHẨM NỔI BẬT  </h1>
@@ -157,8 +160,29 @@
                 </div>
             </div>
 
-           
+
+            @*// gather login*@
+
+            <div class="homepage_cta mx-auto w-[80%]  md:rounded-[500px] rounded-[100px] ">
+               
+                <div class=" flex flex-col items-center duration-300   transition ease-in-out delay-150 mdpx-20 py-20 rounded-[100px] md:rounded-[500px] ">
+                    <h1 class="font-semibold text-[#59764d] text-center whitespace-pre-line md:text-[50px] text-[30px] text-neutral-10 ">Ready? Gather your people.</h1>
+                    <div class=" button-wrap pt-10 mb-10">
+                        <a class=" btn btn_17 " href="shop.html">Mua hàng ngay</a>
+                    </div>
+                </div>
+                
+            </div>
+
         </div>
     </div>
 </div>
 
+
+@section Scripts {
+    <script>
+        let menu = ["Home", "Sản phẩm ", "Blog ", "Liên hệ ", "Về chúng tôi "]
+
+
+    </script>
+}
