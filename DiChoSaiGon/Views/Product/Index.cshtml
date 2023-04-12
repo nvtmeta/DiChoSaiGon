@@ -4,17 +4,53 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+
+@section HeadStyles {
+    <style>
+
+        .product-item {
+            width: 100%;
+            border-radius: 10px !important;
+            transition: .5s;
+        }
+
+        .img-full {
+            box-shadow: rgba(0,0,0,0.24) 3px 3px 8px;
+            border-radius: 10px;
+            background-color: ghostwhite;
+            border: 1px solid #fff
+        }
+
+        .product-item:hover {
+            border: 1px solid #006411;
+            padding: 1px
+        }
+
+        .breadcrumb-heading {
+            font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
+        }
+
+        .product-name:hover {
+            color: red;
+        }
+    </style>
+}
+
+
+
 <!-- Begin Main Content Area -->
-<main class="main-content">
+<main class="main-content ">
     <div class="breadcrumb-area breadcrumb-height ">
-        <div class="container h-100">
+        <div class="container h-100 mb-n10">
             <div class="row h-100">
                 <div class="col-lg-12">
                     <div class="breadcrumb-item">
-                        <h2 class="breadcrumb-heading">Shop Layout</h2>
+                        <h2 class="breadcrumb-heading">Danh Sách Sản Phẩm</h2>
                         <ul>
                             <li>
-                                <a href="index.html">Home <i class="pe-7s-angle-right"></i></a>
+                                <a href="/">Home <i class="pe-7s-angle-right"></i></a>
                             </li>
                             <li>Shop Pages</li>
                         </ul>
@@ -23,9 +59,9 @@
             </div>
         </div>
     </div>
-    <div class="shop-area section-space-y-axis-100">
+    <div class="shop-area m-b-50 mt-n10">
         <div class="container">
-            <h2>Danh sach san pham</h2>
+
             <div class="tab-content text-charcoal pt-8">
                 <div class="tab-pane fade show active" id="grid-view" role="tabpanel" aria-labelledby="grid-view-tab">
                     <div class="product-grid-view row">
@@ -63,9 +99,19 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <a class="product-name" href="@url">@item.ProductName</a>
+                                            <a class="product-name" style="color:black; font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:17px;" href="@url">@item.ProductName</a>
                                             <div class="price-box pb-1">
                                                 <span class="new-price">@item.Price.Value.ToString("#,##0") VNĐ</span>
+                                                <style>
+                                                    .new-price {
+                                                        color: #ba1234;
+                                                        font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;
+                                                        font-style: normal;
+                                                        font-weight: 400;
+                                                        line-height: 1.5;
+                                                        font-weight: bold;
+                                                    }
+                                                </style>
                                             </div>
                                             <div class="rating-box">
                                                 <ul>
