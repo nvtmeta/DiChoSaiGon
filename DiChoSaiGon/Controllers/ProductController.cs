@@ -20,7 +20,7 @@ namespace DiChoSaiGon.Controllers
             try
             {
                 var pageNumber = page == null || page <= 0 ? 1 : page.Value;
-                var pageSize = 10;
+                var pageSize = 20;
                 var lsTinDangs = _context.Products
                     .AsNoTracking()
                     .OrderBy(x => x.DateCreated);

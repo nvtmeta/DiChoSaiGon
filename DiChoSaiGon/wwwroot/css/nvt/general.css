@@ -4,11 +4,12 @@
 }
 
 .btn_17 {
-    border: 1px solid rgb(89, 118, 77);
+    border: 1px solid  #000;
     border-radius: 100px;
     padding: 18px;
     width:200px;
-    font-size:1.4rem
+    font-size:1.4rem;
+    color:#000
 }
     .btn_17:hover {
         background-color: rgb(89, 118, 77);

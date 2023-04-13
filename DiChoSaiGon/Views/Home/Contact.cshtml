@@ -247,6 +247,7 @@
 
 }
 
+    <div id="toast"></div>
 
 <!-- Begin Main Content Area -->
 <main class="main-content">
@@ -309,7 +310,7 @@
                             </div>
                             <div class="app-form-group buttons">
                                 <button class="app-form-button">CANCEL</button>
-                                <button class="app-form-button">SEND</button>
+                                <button onclick="showSuccessToast()" class="app-form-button">SEND</button>
                             </div>
                         </div>
                     </div>
@@ -335,3 +336,27 @@
     </div>
 </main>
 <!-- Main Content Area End Here -->
+
+@section Scripts {
+    @* <script >
+
+        function showSuccessToast() {
+            toast({
+                title: "Thành công!",
+                    message: "Bạn đã đăng ký thành công tài khoản tại F8.",
+                    type: "success",
+                duration: 5000
+            });
+
+
+            function showErrorToast() {
+                toast({
+                    title: "Thất bại!",
+                    message: "Có lỗi xảy ra, vui lòng liên hệ quản trị viên.",
+                    type: "error",
+                    duration: 5000
+                });
+
+                             </script>*@
+}
+                        
