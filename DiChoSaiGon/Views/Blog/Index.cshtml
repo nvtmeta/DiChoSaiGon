@@ -117,8 +117,7 @@
     <h2>Bài viết nổi bật</h2>
 </div>
 
-<div class=" blog-container">
-    <div class="leftcolumn">
+
         @if (Model != null && Model.Count() > 0)
         {
             foreach (var item in Model)
@@ -135,12 +134,4 @@
                 </a>
             }
         }
-    </div>
-    <div class="rightcolumn">
-        <div class="about">
-            <h2>About Us</h2>
-            <img src="~/assets/images/Minhthu/logo.jpg">
-            <p>Kinh doanh quần áo thời trang nam là xu hướng được nhiều shop lựa chọn hiện nay bởi nhu cầu thị trường cao, cho doanh số lớn. Tuy nhiên, không phải ai cũng thực sự thành công khi dấn thân vào con đường này</p>
-        </div>
-    </div>
-</div>
+    
