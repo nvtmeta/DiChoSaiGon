@@ -4,6 +4,8 @@
     ViewData["Title"] = Model.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
     List<Product> lsProducts = ViewBag.SanPham;
+    List<DiChoSaiGon.ModelViews.CartItem> cart = ViewBag.cart;
+
 }
 @section HeadStyles {
     <style>
@@ -106,14 +108,14 @@
 
                                 </div>
                                 <p class="short-desc mb-6">@Model.Description</p>
-                                <ul class="quantity-with-btn pb-7">
+                                <ul class="quantity-with-btn pb-7 w-50">
                                     <li class="quantity">
                                         <div class="cart-plus-minus">
                                             <input id="txtsoLuong" name="txtsoLuong" class="cart-plus-minus-box" value="1" type="text">
                                         </div>
                                     </li>
                                     <li class="add-to-cart">
-                                        <a class="btn btn-custom-size lg-size btn-primary btn-secondary-hover rounded-0" href="javascript:void(0)">Thêm vào giỏ hàng</a>
+                                        <a class="btn_product btn_17 " href="javascript:void(0)">Thêm vào giỏ hàng</a>
                                         <input hidden asp-for="ProductId" />
                                     </li>
                                 </ul>
@@ -158,25 +160,7 @@
                                                     <a href="@url">
                                                         <img class="img-full" src="~/images/products/@item.Thumb" alt="@item.Title" />
                                                     </a>
-                                                    <div class="product-add-action">
-                                                        <ul>
-                                                            <li>
-                                                                <a href="cart.html">
-                                                                    <i class="pe-7s-cart"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="compare.html">
-                                                                    <i class="pe-7s-shuffle"></i>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="wishlist.html">
-                                                                    <i class="pe-7s-like"></i>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
+                                                  
                                                 </div>
                                                 <div class="product-content texx">
                                                     <a class="product-name" href="@url">@item.ProductName</a>
@@ -187,12 +171,21 @@
                                                         <ul>
                                                             <li><i class="pe-7s-star"></i></li>
                                                             <li><i class="pe-7s-star"></i></li>
+
                                                             <li><i class="pe-7s-star"></i></li>
                                                             <li><i class="pe-7s-star"></i></li>
                                                             <li><i class="pe-7s-star"></i></li>
                                                         </ul>
                                                     </div>
+                                                    <div class="  button-wrap pt-10 mb-10">
+                                                        <a class="btn_product" href="@url">
+                                                            <i class="pe-7s-cart"></i>
+                                                            Xem chi tiết
+                                                        </a>
+                                                    </div>
                                                 </div>
+
+                                                
                                             </div>
                                         </div>
                                     }
@@ -211,6 +204,11 @@
     </div>
 </main>
 <!-- Main Content Area End Here  -->
+
+@*// cart*@
+@await Html.PartialAsync("../Home/_ListCartItem", cart);
+
+
 @section Scripts{
     <script>
         $(document).ready(function () {

@@ -6,7 +6,8 @@
 }
 <style>
     .login-form {
-        border-radius: 14px;
+        border-radius: 8px;
+        padding:20px 20px
     }
 
     .btn-17 {
@@ -29,7 +30,7 @@
         }
 
     .login-form input {
-        border-radius: 10px
+        border-radius: 6px
     }
 
 </style>
@@ -37,31 +38,37 @@
 <main class="main-content">
     <div class="login-register-area section-space-y-axis-100">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-5 m-auto">
-                    <form method="post" asp-action="Login"  asp-controller="Accounts" >
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="login-form">
-                            <h4 class="login-title">Đăng nhập</h4>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label>Địa chỉ Email</label>
-                                    <input type="email" asp-for="UserName" placeholder="Địa chỉ Email">
-                                    <span asp-validation-for="UserName" class="text-danger"></span>
-                                </div>
-                                <div class="col-md-12">
-                                    <label>Mật khẩu</label>
-                                    <input type="password" asp-for="Password" placeholder="Mật khẩu">
-                                    <span asp-validation-for="Password" class="text-danger"></span>
-                                </div>
+            <div class="flex md:justify-around items-center flex-col  md:flex-row  md:m-0 m-auto md:gap-0   gap-10" >
+                @*// left*@
+                <div>
+                    <div>
+                    <img src="~/assets/images/logo/z4256473428756_1838e38243348a0619ff1e49ed2846be.jpg " class=" h-[106px] w-[350px] text-left" />
+                    </div>
+                    <h2 class="text-[28px] md:w-[500px]  leading-2rem ">Thinhsero helps you connect and share with the people in your life.</h2>
+                </div>
+                <form method="post" asp-action="Login" asp-controller="Accounts" class="w-[400px] h-[349px]">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="login-form">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="email" asp-for="UserName" placeholder="Địa chỉ Email" >
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="password" asp-for="Password" placeholder="Mật khẩu" >
+                                <span asp-validation-for="Password" class="text-danger" ></span>
+                            </div>
 
-                                <div class="col-6 col-md-12 m-auto d-flex mt-3 justify-content-center">
-                                    <button class="btn-17 btn btn-custom-size lg-size   btn-secondary btn-primary-hover">Đăng nhập</button>
-                                </div>
+                            <div class="col-6 col-md-12 m-auto d-flex mt-3 justify-content-center">
+                                <button class="text-center mt-6 w-full rounded-md bg-blue-500 py-2 font-medium text-blue-50 hover:bg-blue-600">Đăng nhập</button>
+                            </div>
+                            <div class="col-6 col-md-12 m-auto d-flex mt-3 justify-content-center">
+                                <a href="/dang-ky.html" class="bg-[#36a420]  text-center mt-6 w-[192px] rounded-md  py-2 font-medium text-blue-50 hover:bg-[#36a420]">Create new account</a>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
+               
             </div>
         </div>
     </div>

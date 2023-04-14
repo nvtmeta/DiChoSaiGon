@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using DiChoSaiGon.Extension;
+using AspNetCoreHero.ToastNotification.Abstractions;
 using DiChoSaiGon.Helpper;
 using DiChoSaiGon.Models;
+using DiChoSaiGon.ModelViews;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using DiChoSaiGon.ModelView;
-using DiChoSaiGon.ModelViews;
+using DiChoSaiGon.Extension;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace DiChoSaiGon.Controllers
+namespace WebShop.Controllers
 {
     [Authorize]
     public class AccountsController : Controller
     {
         private readonly dbMarketsContext _context;
-        public AccountsController(dbMarketsContext context  )
+        public AccountsController(dbMarketsContext context)
         {
             _context = context;
         }
@@ -64,7 +64,6 @@ namespace DiChoSaiGon.Controllers
 
 
 
-
         [Route("tai-khoan-cua-toi.html", Name = "Dashboard")]
         public IActionResult Dashboard()
         {
@@ -75,11 +74,11 @@ namespace DiChoSaiGon.Controllers
                 if (khachhang != null)
                 {
                     var lsDonHang = _context.Orders
+                        .Include(x => x.TransactStatus)
                         .AsNoTracking()
                         .Where(x => x.CustomerId == khachhang.CustomerId)
+                        .OrderByDescending(x => x.OrderDate)
                         .ToList();
-
-
                     ViewBag.DonHang = lsDonHang;
                     return View(khachhang);
                 }
@@ -87,16 +86,16 @@ namespace DiChoSaiGon.Controllers
             }
             return RedirectToAction("Login");
         }
+
+
+
+
         [HttpGet]
         [AllowAnonymous]
-
-
-
-
         [Route("dang-ky.html", Name = "DangKy")]
         public IActionResult DangkyTaiKhoan()
         {
-            return View();  
+            return View();
         }
 
         [HttpPost]
@@ -157,13 +156,13 @@ namespace DiChoSaiGon.Controllers
 
 
 
-
-
         [AllowAnonymous]
         [Route("dang-nhap.html", Name = "DangNhap")]
-        public IActionResult Login(string returnUrl = null)
+        public IActionResult Login(string returnUrl =null)
         {
             var taikhoanID = HttpContext.Session.GetString("CustomerId");
+            TempData["ReturnUrl"] = returnUrl;
+
             if (taikhoanID != null)
             {
                 return RedirectToAction("Dashboard", "Accounts");
@@ -173,7 +172,7 @@ namespace DiChoSaiGon.Controllers
         [HttpPost]
         [AllowAnonymous]
         [Route("dang-nhap.html", Name = "DangNhap")]
-        public async Task<IActionResult> Login(LoginViewModel customer, string returnUrl)
+        public async Task<IActionResult> Login(LoginViewModel customer, string returnUrl = null)
         {
             try
             {
@@ -184,10 +183,7 @@ namespace DiChoSaiGon.Controllers
 
                     var khachhang = _context.Customers.AsNoTracking().SingleOrDefault(x => x.Email.Trim() == customer.UserName);
 
-                    System.Diagnostics.Debug.WriteLine(khachhang);
-
                     if (khachhang == null) return RedirectToAction("DangkyTaiKhoan");
-
                     string pass = (customer.Password + khachhang.Salt.Trim()).ToMD5();
                     if (khachhang.Password != pass)
                     {
@@ -213,15 +209,18 @@ namespace DiChoSaiGon.Controllers
                     ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, "login");
                     ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
                     await HttpContext.SignInAsync(claimsPrincipal);
-                    if (string.IsNullOrEmpty(returnUrl))
+
+                    if (!string.IsNullOrEmpty(returnUrl))
                     {
-                        return RedirectToAction("Dashboard", "Accounts");
+                        return LocalRedirect(returnUrl);
                     }
                     else
                     {
-                        return Redirect(returnUrl);
+
+                        return Redirect("checkout.html");
                     }
                 }
+            
             }
             catch
             {
@@ -229,6 +228,12 @@ namespace DiChoSaiGon.Controllers
             }
             return View(customer);
         }
+
+
+
+
+
+
 
 
 
@@ -240,6 +245,7 @@ namespace DiChoSaiGon.Controllers
             HttpContext.Session.Remove("CustomerId");
             return RedirectToAction("Index", "Home");
         }
+
 
 
 

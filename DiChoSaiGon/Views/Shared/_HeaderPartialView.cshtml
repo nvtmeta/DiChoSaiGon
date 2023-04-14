@@ -1,111 +1,147 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
-@section HeadStyles {
+﻿@section HeadStyles {
     <style>
 
-/*        relative top-[-1px] sm:left-[160%] left-[89%] right-[84px]
-*/        
+
     </style>
 }
 
-    <nav id="navbar" class="z-100 bg-[#313131] flex items-center sticky    rounded-full bg-[#59764d] h-[90px]  mt-10 w-[90%] m-auto">
-        <div class="z-100 relative flex items-center justify-between  max-w-screen-xl   p-4">
-            <div>
-                <a href="/" class="flex items-center ml-4">
-                    <img src="~/assets/images/logo/z4256473428756_1838e38243348a0619ff1e49ed2846be.jpg" class="h-8 mr-3  w-[140px] rounded-full" alt="Flowbite Logo" />
-                    @*<span class="text-[#000] font-bold ">THINHSERO</span>*@
-                </a>
-            </div>
+<nav id="navbar" class="z-100 bg-[#313131] flex items-center sticky    rounded-full bg-[#59764d] h-[90px]  mt-10 w-[90%] m-auto">
+    <div class="z-100 relative flex items-center justify-between  max-w-screen-xl   p-4">
+        <div>
+            <a href="/" class="flex items-center ml-4">
+                <img src="~/assets/images/logo/z4256473428756_1838e38243348a0619ff1e49ed2846be.jpg" class="h-8 mr-3  w-[140px] rounded-full" alt="Flowbite Logo" />
+                @*<span class="text-[#000] font-bold ">THINHSERO</span>*@
+            </a>
+        </div>
 
-@*            // nut cho mobile menu
+        @*            // nut cho mobile menu
         *@        <button data-collapse-toggle="navbar-default" type="button" class="ml-40 sm:ml-80  inline-flex items-center p-2  text-sm text-white rounded-lg md:hidden hover:bg-[#ccc] " aria-controls="navbar-default" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-            </button>
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        </button>
 
-            <div class="hidden w-full  justify-between  md:flex items-center">
-                <div class="font-medium flex flex-col  md:p-0 ml-[50px]   md:flex-row md:space-x-8 md:mt-0 ">
+        <div class="hidden w-full  justify-between  md:flex items-center">
+            <div class="font-medium flex flex-col  md:p-0 ml-[50px]   md:flex-row md:space-x-8 md:mt-0 ">
 
-                    <a href="/" class="block  text-[#FBFCFF] text-[20px] font-medium   hover:text-[#ccc] cursor-pointer " href="#">Home</a>
+                <a href="/" class="block  text-[#FBFCFF] text-[20px] font-medium   hover:text-[#ccc] cursor-pointer " href="#">Home</a>
 
-                    <a href="/shop.html" class=" text-[#FBFCFF] text-[20px] font-medium    mr-4  hover:text-[#ccc] cursor-pointer rounded-[999px]">Sản phẩm</a>
-
-
-                    <a asp-action="Index" asp-controller="Blog" class=" text-[#FBFCFF] text-[20px] font-medium mr-4  hover:text-[#ccc] cursor-pointer rounded-[999px]">BLog </a>
+                <a href="/shop.html" class=" text-[#FBFCFF] text-[20px] font-medium    mr-4  hover:text-[#ccc] cursor-pointer rounded-[999px]">Sản phẩm</a>
 
 
-                    <a asp-action="Contact" asp-controller="Home" class=" text-[#FBFCFF] text-[20px] font-medium  mr-4 hover:text-[#ccc] cursor-pointer rounded-[999px]">Liên hệ </a>
+                <a asp-action="Index" asp-controller="Blog" class=" text-[#FBFCFF] text-[20px] font-medium mr-4  hover:text-[#ccc] cursor-pointer rounded-[999px]">BLog </a>
 
 
-                    <a asp-action="About" asp-controller="Home" class=" text-[#FBFCFF] text-[20px] font-medium  hover:text-[#ccc] cursor-pointer rounded-[999px]">Về chúng tôi </a>
+                <a asp-action="Contact" asp-controller="Home" class=" text-[#FBFCFF] text-[20px] font-medium  mr-4 hover:text-[#ccc] cursor-pointer rounded-[999px]">Liên hệ </a>
 
 
-
-                </div>
-                @* // login*@
-
-                <div class=" flex items-center ml-[200px]">
+                <a asp-action="About" asp-controller="Home" class=" text-[#FBFCFF] text-[20px] font-medium  hover:text-[#ccc] cursor-pointer rounded-[999px]">Về chúng tôi </a>
 
 
 
-                    <button class=" text-white text-[30px] text-large btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="pe-7s-users"></i>
-                    </button>
-
-
-                    <ul class="bg-dark hover:bg-[#ccc] text-[40px] dropdown-menu dropdown-menu-end" aria-labelledby="settingButton">
-
-                        @if (User.Identity.IsAuthenticated)
-                        {
-                            <li><a class="text-white text-[30px] hover:text-dark dropdown-item" href="tai-khoan-cua-toi.html">My account</a></li>
-                            <li><a class="text-white text-[30px] hover:text-dark dropdown-item" href="dang-xuat.html">Đăng xuất </a></li>
-
-                        }
-                        else
-                        {
-                            <li><a class="dropdown-item text-white hover:text-dark text-[30px]" href="dang-nhap.html">Đăng nhập  </a></li>
-                            <li><a class="dropdown-item text-white hover:text-dark text-[30px]" href="dang-ky.html">Đăng ký </a></li>
-                        }
-
-
-                    </ul>
-
-                    <a href="#miniCart" class=" toolbar-btn">
-                        @await Component.InvokeAsync("NumberCart")
-                    </a>
-
-
-                    <div class="offcanvas-minicart_wrapper  " id="miniCart">
-                        @await Component.InvokeAsync("HeaderCart")
-                    </div>
-                </div>
             </div>
-            <div class="global-overlay"></div>
+            @* // login*@
 
-            @*//mobile*@
-            <div class="hidden w-full z-10 absolute inset-0 left-[150px] top-[40px] md:hidden md:w-auto" id="navbar-default">
-                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li>
-                        <a href="/" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="shop.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Product</a>
-                    </li>
-                    <li>
-                    <a asp-action="Index" asp-controller="Blog" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</a>
-                    </li>
-                    <li>
-                    <a asp-action="Contact" asp-controller="Home" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-                    </li>
-                    <li>
-                    <a asp-action="About" asp-controller="Home" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About us</a>
-                    </li>
+            <div class=" flex items-center ml-[200px]">
+
+
+
+                <button class=" text-white text-[30px] text-large btn btn-link dropdown-toggle ht-btn p-0" type="button" id="settingButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="pe-7s-users"></i>
+                </button>
+
+
+                <ul class="bg-dark hover:bg-[#ccc] text-[40px] dropdown-menu dropdown-menu-end" aria-labelledby="settingButton">
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a class="text-white text-[30px] hover:text-dark dropdown-item" href="tai-khoan-cua-toi.html">My account</a></li>
+                        <li><a class="text-white text-[30px] hover:text-dark dropdown-item" href="dang-xuat.html">Đăng xuất </a></li>
+
+                    }
+                    else
+                    {
+                        <li><a class="dropdown-item text-white hover:text-dark text-[30px]" href="dang-nhap.html">Đăng nhập  </a></li>
+                        <li><a class="dropdown-item text-white hover:text-dark text-[30px]" href="dang-ky.html">Đăng ký </a></li>
+                    }
+
+
                 </ul>
-            </div>
-    </nav>
 
+                <a href="#miniCart" class=" toolbar-btn">
+                    @await Component.InvokeAsync("NumberCart")
+                </a>
+
+
+                <div class="offcanvas-minicart_wrapper md:static  fixed inset-0 " id="miniCart">
+                    @await Component.InvokeAsync("HeaderCart")
+                </div>
+            </div>
+        </div>
+        <div class="global-overlay"></div>
+
+        @*//mobile*@
+        <div class="hidden w-full z-10 absolute inset-0 left-[150px] top-[40px] md:hidden md:w-auto" id="navbar-default">
+            <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a href="/" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
+                </li>
+                <li>
+                    <a href="shop.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Product</a>
+                </li>
+                <li>
+                    <a asp-action="Index" asp-controller="Blog" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Blog</a>
+                </li>
+                <li>
+                    <a asp-action="Contact" asp-controller="Home" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                </li>
+                <li>
+                    <a asp-action="About" asp-controller="Home" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About us</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" class="cart_btn   block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Cart</a>
+                </li>
+                <li>
+
+                    <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
+                            class="cart_btn block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 flex items-center " type="button">
+                        User  <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div id="dropdownHover" class="absolute inset-0     z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownActiveButton">
+
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <li>
+                                    <a href="tai-khoan-cua-toi.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Your Account</a>
+                                </li>
+                                <li>
+                                    <a href="dang-xuat.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Log out</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="dang-nhap.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign in</a>
+                                </li>
+                                <li>
+                                    <a href="dang-ky.html" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign Up</a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+</nav>
+
+@*// cart*@
+
+@*// cart*@
 
 
 <!-- Main Header Area End Here -->
+@*// mobile*@
+
+

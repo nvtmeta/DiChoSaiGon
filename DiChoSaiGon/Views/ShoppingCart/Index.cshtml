@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <main class="main-content">
-    <div class="breadcrumb-area breadcrumb-height" data-bg-image="/assets/images/banner/2-1-1920x523.jpg">
+    <div class="breadcrumb-area breadcrumb-height">
         <div class="container h-100">
             <div class="row h-100">
                 <div class="col-lg-12">
@@ -47,11 +47,11 @@
                                             {
                                                 <tr>
                                                     <td class="product_remove">
-                                                        <input type="button" value="X" class="removecart btn btn-primary" data-mahh="@item.product.ProductId" />
+                                                        <input type="button" value="X" class="removecart btn_17 w-20 btn_product  " data-mahh="@item.product.ProductId" />
                                                     </td>
-                                                    <td class="product-thumbnail">
+                                                    <td class="">
                                                         <a href="javascript:void(0)">
-                                                            <img src="~/images/products/@item.product.Thumb" alt="@item.product.Title">
+                                                            <img class="w-[200px] h-[200px] rounded-[10px]" src="~/images/products/@item.product.Thumb" alt="@item.product.Title">
                                                         </a>
                                                     </td>
                                                     <td class="product-name"><a href="javascript:void(0)">@item.product.ProductName</a></td>

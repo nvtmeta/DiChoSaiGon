@@ -8,6 +8,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using DiChoSaiGon.ModelViews;
+using Microsoft.AspNetCore.Http;
+using DiChoSaiGon.Extension;
+
 
 namespace DiChoSaiGon.Controllers
 {
@@ -43,8 +47,12 @@ namespace DiChoSaiGon.Controllers
 
             model.Products = lsProducts;
 
+            var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");
 
+
+            ViewBag.cart = cart;
             ViewBag.AllProducts = lsProducts;
+
             return View(model);
 
 

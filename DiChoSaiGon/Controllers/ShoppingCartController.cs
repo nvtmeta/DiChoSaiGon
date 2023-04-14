@@ -80,6 +80,9 @@ namespace WebShop.Controllers
 
 
 
+
+
+
         [HttpPost]
         [Route("api/cart/update")]
         public IActionResult UpdateCart(int productID, int? amount)
@@ -105,6 +108,8 @@ namespace WebShop.Controllers
                 return Json(new { success = false });
             }
         }
+
+
 
 
 

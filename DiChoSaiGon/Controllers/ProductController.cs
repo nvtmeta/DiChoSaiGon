@@ -1,8 +1,13 @@
 ﻿using DiChoSaiGon.Models;
+using DiChoSaiGon.ModelViews;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PagedList.Core;
+using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
+using DiChoSaiGon.Extension;
+
 
 namespace DiChoSaiGon.Controllers
 {
@@ -27,6 +32,11 @@ namespace DiChoSaiGon.Controllers
                 PagedList<Product> models = new PagedList<Product>(lsTinDangs, pageNumber, pageSize);
 
                 ViewBag.CurrentPage = pageNumber;
+
+                var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");
+
+
+                ViewBag.cart = cart;
                 return View(models);
             }
             catch
@@ -49,6 +59,13 @@ namespace DiChoSaiGon.Controllers
 
                 var lsProduct = _context.Products.AsNoTracking().Where(x => 
                 x.ProductId != id && x.Active == true).Take(3).ToList();
+
+
+
+                var cart = HttpContext.Session.Get<List<CartItem>>("GioHang");
+
+
+                ViewBag.cart = cart;
 
                 ViewBag.SanPham = lsProduct;
 

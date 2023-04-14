@@ -5,10 +5,8 @@
 
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 var prevScrollpos = window.pageYOffset;
-console.log(prevScrollpos)
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
-    console.log(currentScrollPos)
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("navbar").style.top = "20px";
     } else {
@@ -120,3 +118,31 @@ function showErrorToast() {
         duration: 5000
     });
 }
+
+
+
+// show modal cart
+
+const cart_btn = document.getElementsByClassName("cart_btn")[0]
+
+const open_cart = document.getElementsByClassName("open_cart")[0]
+
+
+
+console.log(open_cart);
+
+function showLogIn() {
+    open_cart.classList.remove('hidden');
+    console.log('ok');
+};
+
+function hiddenLogIn() {
+    open_cart.classList.add('hidden');
+};
+
+
+
+window.onload(hiddenLogIn())
+
+
+cart_btn.addEventListener('click', showLogIn)

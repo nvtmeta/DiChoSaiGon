@@ -1,0 +1,83 @@
+﻿
+@model List<DiChoSaiGon.ModelViews.CartItem>
+@using (Html.BeginForm(new { returnUrl = Context.Request.Query["ReturnUrl"] }))
+
+
+    @section HeadStyles {
+    <style>
+
+    </style>
+}
+
+
+<div class="open_cart fixed inset-0 overflow-scroll  none z-40 md:hidden ">
+@if(Model != null && Model.Count() > 0 ) {
+    <div class="z-40 bg-gray-100 pt-20">
+        <h1 class="mb-10 text-center text-2xl font-bold">Cart Items</h1>
+        <div class="mx-auto max-w-5xl justify-center px-6 ">
+            <div class="rounded-lg ">
+                @foreach (var item in Model)
+                {
+
+                    <div class="justify-between mb-6 rounded-lg bg-white p-6 shadow-md">
+                        <img src="~/images/products/@item.product.Thumb" alt="@item.product.ProductName" class="w-full rounded-lg sm:w-40" />
+                        <div class="">
+                            <div class="mt-5">
+                                <h2 class="text-lg font-bold text-gray-900">@item.product.ProductName</h2>
+                            </div>
+                            <div class="mt-4 flex justify-between ">
+                                <div class="flex items-center border-gray-100">
+                                    <span class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50"> - </span>
+                                    <input class="h-8 w-8 border bg-white text-center text-xs outline-none" type="number" value="2" min="1" />
+                                    <span class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <p class="text-sm">@item.product.Price.Value.ToString("#,##0") VNĐ</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 cursor-pointer duration-150 hover:text-red-500">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <!-- Sub total -->
+            <div class="mt-6 h-full rounded-lg border bg-white p-6 shadow-md ">
+                <div class="mb-2 flex justify-between">
+                    <p class="text-gray-700">Subtotal</p>
+                        <p class="text-gray-700">@Model.Sum(x => x.TotalMoney).ToString("#,##0") VNĐ</p>
+                </div>`
+                <div class="flex justify-between">
+                </div>
+                <hr class="my-4" />
+                <div class="flex justify-between">
+                    <p class="text-lg font-bold">Total</p>
+                    <div class="">
+                            <p class="mb-1 text-lg font-bold">@Model.Sum(x => x.TotalMoney).ToString("#,##0") VNĐ</p>
+                        <p class="text-sm text-gray-700">including VAT</p>
+                    </div>
+                </div>
+                    <div class="group-btn_wrap d-grid gap-2">
+                        <a href="cart.html" class="text-center mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Xem giỏ hàng</a>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <a href="/checkout.html" class="text-center mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Thanh toán</a>
+                        }
+                        else
+                        {
+                                <a href="/dang-nhap.html?returnUrl=/checkout.html" class="text-center mt-6 w-full rounded-md bg-blue-500 py-1.5 font-medium text-blue-50 hover:bg-blue-600">Thanh toán</a>
+                        }
+                    </div>
+            </div>
+        </div>
+        </div>
+    } else
+    {
+        <div class="w-[100%] h-[100%] m-auto bg-white ">
+            <img class="w-[600px] pt-[100px]   object-contain " src="https://cdn.dribbble.com/users/2370289/screenshots/6150406/media/6579b4e1f9a6658157cf653538b25a8b.jpg?compress=1&resize=400x300" />
+            <a href="shop.html" class="text-center mt-6  rounded-md bg-blue-500 py-4 px-[0px] flex justify-center w-[380px] mx-auto  font-medium text-blue-50 hover:bg-blue-600">Buy now</a>
+
+     </div>   
+    }
+</div>

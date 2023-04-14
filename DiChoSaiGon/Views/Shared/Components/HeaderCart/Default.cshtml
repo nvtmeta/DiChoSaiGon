@@ -1,6 +1,11 @@
 ﻿@model List<DiChoSaiGon.ModelViews.CartItem>
+@using (Html.BeginForm(new { returnUrl = Context.Request.Query["ReturnUrl"] }))
 
-
+@section HeadStyles {
+    <style>
+       
+    </style>
+}
 
 @if (Model != null && Model.Count() > 0)
 {
@@ -31,17 +36,24 @@
             <span class="ammount">@Model.Sum(x => x.TotalMoney).ToString("#,##0") VNĐ</span>
         </div>
         <div class="group-btn_wrap d-grid gap-2">
-            <a href="cart.html" class="btn btn-secondary btn-primary-hover">Xem giỏ hàng</a>
+            <a href="cart.html" class="btn_17 btn_product w-100">Xem giỏ hàng</a>
             @if (User.Identity.IsAuthenticated)
             {
-                <a href="/checkout.html" class="btn btn-secondary btn-primary-hover">Thanh toán</a>
+                <a href="/checkout.html" class="btn_17 btn_product w-100">Thanh toán</a>
             }
             else
             {
-                <a href="/dang-nhap.html?returnUrl=/checkout.html" class="btn btn-secondary btn-primary-hover">Thanh toán</a>
+                <a href="/dang-nhap.html?returnUrl=/checkout.html" class="btn_17 btn_product w-100">Thanh toán</a>
             }
         </div>
     </div>
+
+
+
+    // mobile
+
+
+
 }
 else
 {
@@ -53,4 +65,18 @@ else
             </div>
         </div>
     </div>
+}
+
+
+ 
+
+
+
+@section scripts{
+    <script type="text/javascript">
+        //Here is the custom javascript just for this view.
+
+     
+
+    </script>
 }

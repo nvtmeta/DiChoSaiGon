@@ -3,6 +3,8 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    List<DiChoSaiGon.ModelViews.CartItem> cart = ViewBag.cart;
+
 }
 
 
@@ -78,28 +80,10 @@
                                             <a href="@url">
                                                 <img class="img-full" src="~/images/products/@item.Thumb" alt="@item.Title">
                                             </a>
-                                            <div class="product-add-action">
-                                                <ul>
-                                                    <li>
-                                                        <a href="@url">
-                                                            <i class="pe-7s-cart"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="compare.html">
-                                                            <i class="pe-7s-shuffle"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="wishlist.html">
-                                                            <i class="pe-7s-like"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
+
                                         </div>
                                         <div class="product-content">
-                                            <a class="product-name" style="color:black; font-family: 'Roboto Condensed','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:17px;" href="@url">@item.ProductName</a>
+                                            <a class="product-name"  href="@url">@item.ProductName</a>
                                             <div class="price-box pb-1">
                                                 <span class="new-price">@item.Price.Value.ToString("#,##0") VNĐ</span>
                                                 <style>
@@ -124,6 +108,14 @@
                                             </div>
                                             <p class="short-desc mb-0">@item.ShortDesc</p>
                                         </div>
+
+                                        
+                                            <div class="  button-wrap pt-10 mb-10">
+                                                <a class="btn_product" href="@url">
+                                                    <i class="pe-7s-cart"></i>
+                                                    Xem chi tiết
+                                                </a>
+                                            </div>
                                     </div>
                                 </div>
                             }
@@ -137,4 +129,11 @@
         </div>
     </div>
 </main>
+
+
+@*// cart*@
+
+@*// cart*@
+@await Html.PartialAsync("../Home/_ListCartItem", cart);
+
 <!-- Main Content Area End Here -->
